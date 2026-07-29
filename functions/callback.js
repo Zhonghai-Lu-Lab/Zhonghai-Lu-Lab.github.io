@@ -64,7 +64,7 @@ function callbackResponse(token, cmsOrigin) {
     (() => {
       const targetOrigin = ${targetOrigin};
       const receiveMessage = (event) => {
-        if (event.origin !== targetOrigin || event.source !== window.opener) return;
+        if (event.origin !== targetOrigin) return;
         window.opener.postMessage(${authorizationMessage}, targetOrigin);
         window.removeEventListener('message', receiveMessage, false);
       };
