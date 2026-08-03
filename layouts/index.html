@@ -40,7 +40,7 @@
   </header>
 
   <main id="main">
-    {{ $events := (where .Site.RegularPages "Section" "events").ByWeight }}
+    {{ $events := ((where (where .Site.RegularPages "Section" "events") "Params.featured" true).ByWeight) }}
     <section id="hero" class="hero" aria-roledescription="carousel" aria-label="{{ if $zh }}重要事件{{ else }}Featured lab events{{ end }}" data-carousel>
       <div class="hero-slides">
         {{ range $index, $event := $events }}

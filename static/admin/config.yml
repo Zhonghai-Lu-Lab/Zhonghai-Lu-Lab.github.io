@@ -49,8 +49,16 @@ collections:
       - {label: Summary, name: summary, widget: text}
       - {label: Hero image, name: hero, widget: image}
       - {label: Image alt text, name: hero_alt, widget: string}
-      - {label: Button text, name: button, widget: string}
-      - {label: Button target, name: target, widget: string, hint: "Use a section anchor such as #news or a verified page path such as /publications/paper-slug/"}
+      - {label: Button text, name: button, widget: string, required: false, hint: "Use for a single button; leave empty when using Additional buttons"}
+      - {label: Button target, name: target, widget: string, required: false, pattern: ['^(#|/|https?://)', 'Use #anchor, /path/, or a full http(s) URL'], hint: "Use a section anchor such as #news or a verified page path such as /publications/paper-slug/"}
+      - label: Additional buttons
+        name: actions
+        widget: list
+        required: false
+        hint: "Use this list when the slide needs more than one button"
+        fields:
+          - {label: Button text, name: label, widget: string}
+          - {label: Button target, name: url, widget: string, pattern: ['^(#|/|https?://)', 'Use #anchor, /path/, or a full http(s) URL']}
       - {label: Show in carousel, name: featured, widget: boolean, default: true}
       - {label: Order, name: weight, widget: number, default: 10}
       - {label: Body, name: body, widget: markdown}
@@ -66,8 +74,16 @@ collections:
       - {label: 摘要, name: summary, widget: text}
       - {label: 主图, name: hero, widget: image}
       - {label: 图片替代文本, name: hero_alt, widget: string}
-      - {label: 按钮文字, name: button, widget: string}
-      - {label: 按钮目标, name: target, widget: string, hint: "填写栏目锚点（如 #news）或已核实的详情页路径（如 /zh/publications/paper-slug/）"}
+      - {label: 按钮文字, name: button, widget: string, required: false, hint: "单按钮时填写；使用多个按钮时留空"}
+      - {label: 按钮目标, name: target, widget: string, required: false, pattern: ['^(#|/|https?://)', '请填写 #锚点、/站内路径/ 或完整 http(s) URL'], hint: "填写栏目锚点（如 #news）或已核实的详情页路径（如 /zh/publications/paper-slug/）"}
+      - label: 多按钮
+        name: actions
+        widget: list
+        required: false
+        hint: "轮播需要多个按钮时在此添加"
+        fields:
+          - {label: 按钮文字, name: label, widget: string}
+          - {label: 按钮目标, name: url, widget: string, pattern: ['^(#|/|https?://)', '请填写 #锚点、/站内路径/ 或完整 http(s) URL']}
       - {label: 进入轮播, name: featured, widget: boolean, default: true}
       - {label: 顺序, name: weight, widget: number, default: 10}
       - {label: 正文, name: body, widget: markdown}
@@ -109,8 +125,9 @@ collections:
     fields:
       - {label: Title, name: title, widget: string}
       - {label: Date, name: date, widget: datetime, time_format: false}
-      - {label: Awarder, name: awarder, widget: string, hint: "Organization or program granting the award"}
-      - {label: Level, name: level, widget: string, hint: "Optional, e.g. National / Provincial / University"}
+      - {label: Recipient, name: recipient, widget: string, hint: "Person, team, or project receiving the award"}
+      - {label: Awarder, name: awarder, widget: string, required: false, hint: "Optional organization or program granting the award"}
+      - {label: Level, name: level, widget: string, required: false, hint: "Optional, e.g. Best Paper / National / Provincial / University"}
       - {label: Summary, name: summary, widget: text}
       - {label: Body, name: body, widget: markdown}
   - name: awards_zh
@@ -121,7 +138,8 @@ collections:
     fields:
       - {label: 标题, name: title, widget: string}
       - {label: 日期, name: date, widget: datetime, time_format: false}
-      - {label: 颁奖方, name: awarder, widget: string, hint: "颁奖单位或项目名称"}
-      - {label: 级别, name: level, widget: string, hint: "可选，例如 国家级 / 省级 / 校级"}
+      - {label: 获奖人或团队, name: recipient, widget: string, hint: "填写获奖个人、团队或项目"}
+      - {label: 颁奖方, name: awarder, widget: string, required: false, hint: "可选，填写颁奖单位或项目名称"}
+      - {label: 级别, name: level, widget: string, required: false, hint: "可选，例如 最佳论文 / 国家级 / 省级 / 校级"}
       - {label: 摘要, name: summary, widget: text}
       - {label: 正文, name: body, widget: markdown}
