@@ -61,6 +61,7 @@
               <a class="button button-light" href="{{ $event.Params.target }}">{{ . }}</a>
               {{ end }}{{ end }}
               {{ end }}
+              {{ with $event.Params.details }}<ul class="hero-details">{{ range . }}<li><strong>{{ .label }}</strong> {{ .value }}</li>{{ end }}</ul>{{ end }}
             </div>
           </div>
         </article>

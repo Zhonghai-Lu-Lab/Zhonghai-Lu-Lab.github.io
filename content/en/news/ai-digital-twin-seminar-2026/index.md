@@ -26,10 +26,15 @@ In this talk, we will discuss some of our recent work aimed at addressing these 
 
 ## About the Speaker
 
-![Prof. Zhiguo ZENG](/images/news/seminar-aug2026/speaker-portrait.png)
+<div class="speaker-block">
+<img src="/images/news/seminar-aug2026/speaker-portrait.png" alt="Prof. Zhiguo ZENG" />
+<div class="speaker-block-text">
 
 **Prof. Zhiguo ZENG** received the Ph.D. degree in reliability engineering from Beihang University in 2016. After receiving his PhD, he joined CentraleSupélec, Université Paris-Saclay, and became a full professor in 2023. His research focuses on the characterization and modeling of the failure/repair/maintenance behavior of components, complex systems, and their reliability, maintainability, prognostics, safety, vulnerability, and security.
 
 Dr. ZENG is an author/co-author of more than 100 papers in highly recognized international journals and conferences. He is recognized as Top Scholar by ScholarGPS and top 2% scholar by Elsevier and Stanford University. His research has been funded by important government funding agencies like ANR and ERC, and also important industrial companies like EDF, SNCF, Orange, and GE Healthcare. He is editorial board member of *International Journal of Data Analysis Techniques and Strategies* and *Journal of Uncertain Systems*, and the leading guest editor of the special issue on "Dependent failure modeling" of the *Journal of Applied Science*.
+
+</div>
+</div>
 
 The seminar is open to all faculty, students, and research colleagues across HKUST(GZ).

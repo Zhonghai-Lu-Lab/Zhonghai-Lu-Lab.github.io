@@ -63,6 +63,9 @@ button { font: inherit; }
 .button-light:hover { background: var(--white); color: var(--navy); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .hero-actions .button { min-width: 0; margin-top: 0; padding-inline: 20px; }
+.hero-details { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 8px 36px; max-width: 680px; }
+.hero-details li { margin: 0; padding: 0; color: rgba(255,255,255,.85); font-family: Inter,"Helvetica Neue",Arial,sans-serif; font-size: 14px; line-height: 1.5; display: grid; grid-template-columns: 84px 1fr; gap: 12px; }
+.hero-details strong { color: var(--white); font-weight: 600; letter-spacing: .02em; }
 .hero-ui { position: absolute; bottom: 43px; left: 50%; width: var(--shell); transform: translateX(-50%); display: flex; align-items: center; justify-content: space-between; gap: 36px; z-index: 5; }
 .hero-dots { display: flex; gap: 9px; }
 .hero-dot { width: 34px; height: 3px; padding: 0; border: 0; background: rgba(255,255,255,.34); cursor: pointer; transition: background .3s, width .3s; }
@@ -302,6 +305,11 @@ a:hover .inline-link span { transform: translateX(5px); }
 .article-body img { width: 100%; height: auto; display: block; margin: 0 0 38px; }
 .article-feature-image { max-height: 760px; object-fit: contain; object-position: top center; background: #f5efe2; }
 .article-body h2 { margin-top: 2.2em; color: var(--ink); }.article-body a { color: var(--teal); border-bottom: 1px solid currentColor; }
+.speaker-block { display: grid; grid-template-columns: 220px 1fr; gap: 36px; align-items: start; margin: 24px 0 28px; padding: 28px; background: rgba(255,255,255,.7); border-radius: 14px; }
+.speaker-block img { width: 220px; height: auto; margin: 0; border-radius: 12px; box-shadow: 0 8px 22px rgba(8,46,58,.08); }
+.speaker-block-text p { margin: 0 0 14px; font-size: 16px; line-height: 1.7; color: #34494f; }
+.speaker-block-text p:last-child { margin-bottom: 0; }
+@media (max-width: 700px) { .speaker-block { grid-template-columns: 1fr; padding: 22px; }.speaker-block img { width: 100%; max-width: 220px; margin: 0 auto; } }
 .listing-header { margin-bottom: 54px; }.listing-header > div { max-width: 720px; margin-top: 24px; color: var(--muted); }
 .listing-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
 .listing-card { min-height: 210px; padding: 26px; position: relative; background: var(--white); border: 1px solid var(--line); transition: transform .35s var(--ease), border-color .35s; }
