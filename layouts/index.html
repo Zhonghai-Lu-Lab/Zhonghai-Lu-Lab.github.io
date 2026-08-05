@@ -46,7 +46,7 @@
         {{ range $index, $event := $events }}
         {{ $hero := $event.Params.hero }}
         {{ with $event.Resources.GetMatch $hero }}{{ $hero = .RelPermalink }}{{ end }}
-        <article class="hero-slide{{ if eq $index 0 }} is-active{{ end }}{{ if eq $event.Params.hero_mode "poster" }} is-poster{{ end }}" data-slide="{{ $index }}" style="--slide-image: url('{{ $hero }}'){{ with $event.Params.hero_position }}; --hero-position: {{ . }}{{ end }}" aria-hidden="{{ if eq $index 0 }}false{{ else }}true{{ end }}">
+        <article class="hero-slide{{ if eq $index 0 }} is-active{{ end }}{{ if eq $event.Params.hero_mode "poster" }} is-poster{{ end }}{{ if eq $event.Params.hero_mode "split" }} is-split{{ end }}" data-slide="{{ $index }}"{{ if ne $event.Params.hero_mode "split" }} style="--slide-image: url('{{ $hero }}'){{ with $event.Params.hero_position }}; --hero-position: {{ . }}{{ end }}"{{ end }} aria-hidden="{{ if eq $index 0 }}false{{ else }}true{{ end }}">
           <div class="hero-image" role="img" aria-label="{{ $event.Params.hero_alt }}"></div>
           {{ if eq $event.Params.hero_mode "poster" }}<div class="hero-poster" aria-hidden="true"></div>{{ end }}
           <div class="hero-shade"></div>
@@ -63,6 +63,7 @@
               {{ end }}
               {{ with $event.Params.details }}<ul class="hero-details">{{ range . }}<li><strong>{{ .label }}</strong> {{ .value }}</li>{{ end }}</ul>{{ end }}
             </div>
+            {{ if eq $event.Params.hero_mode "split" }}<div class="hero-illustration"><img src="{{ $hero }}" alt="{{ $event.Params.hero_alt }}" /></div>{{ end }}
           </div>
         </article>
         {{ end }}
