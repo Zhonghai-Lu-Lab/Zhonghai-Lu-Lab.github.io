@@ -20,10 +20,10 @@ collections:
       - {label: Title, name: title, widget: string}
       - {label: Date, name: date, widget: datetime, time_format: false}
       - {label: Category, name: category, widget: string}
-      - {label: Summary, name: summary, widget: text}
+      - {label: Summary, name: summary, widget: text, required: false}
       - {label: Featured image, name: image, widget: image, required: false, hint: "Upload the main image shown on the homepage and article page"}
       - {label: Image alt text, name: image_alt, widget: string, required: false, hint: "Briefly describe the image for accessibility"}
-      - {label: Body, name: body, widget: markdown}
+      - {label: Body, name: body, widget: markdown, required: false}
   - name: news_zh
     label: 新闻（中文）
     folder: content/zh/news
@@ -33,10 +33,10 @@ collections:
       - {label: 标题, name: title, widget: string}
       - {label: 日期, name: date, widget: datetime, time_format: false}
       - {label: 分类, name: category, widget: string}
-      - {label: 摘要, name: summary, widget: text}
+      - {label: 摘要, name: summary, widget: text, required: false}
       - {label: 封面图片, name: image, widget: image, required: false, hint: "上传显示在首页和新闻详情页的主图"}
       - {label: 图片说明, name: image_alt, widget: string, required: false, hint: "简要描述图片内容，用于无障碍访问"}
-      - {label: 正文, name: body, widget: markdown}
+      - {label: 正文, name: body, widget: markdown, required: false}
   - name: events_en
     label: Carousel Events (English)
     folder: content/en/events
@@ -46,7 +46,7 @@ collections:
       - {label: Title, name: title, widget: string}
       - {label: Date, name: date, widget: datetime, time_format: false}
       - {label: Kicker, name: kicker, widget: string}
-      - {label: Summary, name: summary, widget: text}
+      - {label: Summary, name: summary, widget: text, required: false}
       - {label: Hero image, name: hero, widget: image}
       - {label: Image alt text, name: hero_alt, widget: string}
       - {label: Button text, name: button, widget: string, required: false, hint: "Use for a single button; leave empty when using Additional buttons"}
@@ -61,7 +61,7 @@ collections:
           - {label: Button target, name: url, widget: string, pattern: ['^(#|/|https?://)', 'Use #anchor, /path/, or a full http(s) URL']}
       - {label: Show in carousel, name: featured, widget: boolean, default: true}
       - {label: Order, name: weight, widget: number, default: 10}
-      - {label: Body, name: body, widget: markdown}
+      - {label: Body, name: body, widget: markdown, required: false}
   - name: events_zh
     label: 轮播事件（中文）
     folder: content/zh/events
@@ -71,7 +71,7 @@ collections:
       - {label: 标题, name: title, widget: string}
       - {label: 日期, name: date, widget: datetime, time_format: false}
       - {label: 栏目短标题, name: kicker, widget: string}
-      - {label: 摘要, name: summary, widget: text}
+      - {label: 摘要, name: summary, widget: text, required: false}
       - {label: 主图, name: hero, widget: image}
       - {label: 图片替代文本, name: hero_alt, widget: string}
       - {label: 按钮文字, name: button, widget: string, required: false, hint: "单按钮时填写；使用多个按钮时留空"}
@@ -86,7 +86,7 @@ collections:
           - {label: 按钮目标, name: url, widget: string, pattern: ['^(#|/|https?://)', '请填写 #锚点、/站内路径/ 或完整 http(s) URL']}
       - {label: 进入轮播, name: featured, widget: boolean, default: true}
       - {label: 顺序, name: weight, widget: number, default: 10}
-      - {label: 正文, name: body, widget: markdown}
+      - {label: 正文, name: body, widget: markdown, required: false}
   - name: publications_en
     label: Publications (English)
     folder: content/en/publications
@@ -100,8 +100,8 @@ collections:
       - {label: Year, name: year, widget: number}
       - {label: DOI, name: doi, widget: string, required: false}
       - {label: PDF, name: pdf, widget: string, required: false, hint: "Path to the PDF inside the static folder, e.g. /uploads/papers/filename.pdf"}
-      - {label: Summary, name: summary, widget: text}
-      - {label: Body, name: body, widget: markdown}
+      - {label: Summary, name: summary, widget: text, required: false}
+      - {label: Body, name: body, widget: markdown, required: false}
   - name: publications_zh
     label: 出版物（中文）
     folder: content/zh/publications
@@ -115,8 +115,8 @@ collections:
       - {label: 年份, name: year, widget: number}
       - {label: DOI, name: doi, widget: string, required: false}
       - {label: PDF, name: pdf, widget: string, required: false, hint: "PDF 相对路径，例如 /uploads/papers/filename.pdf"}
-      - {label: 摘要, name: summary, widget: text}
-      - {label: 正文, name: body, widget: markdown}
+      - {label: 摘要, name: summary, widget: text, required: false}
+      - {label: 正文, name: body, widget: markdown, required: false}
   - name: awards_en
     label: Awards (English)
     folder: content/en/awards
@@ -128,8 +128,8 @@ collections:
       - {label: Recipient, name: recipient, widget: string, hint: "Person, team, or project receiving the award"}
       - {label: Awarder, name: awarder, widget: string, required: false, hint: "Optional organization or program granting the award"}
       - {label: Level, name: level, widget: string, required: false, hint: "Optional, e.g. Best Paper / National / Provincial / University"}
-      - {label: Summary, name: summary, widget: text}
-      - {label: Body, name: body, widget: markdown}
+      - {label: Summary, name: summary, widget: text, required: false}
+      - {label: Body, name: body, widget: markdown, required: false}
   - name: awards_zh
     label: 奖项（中文）
     folder: content/zh/awards
@@ -141,5 +141,5 @@ collections:
       - {label: 获奖人或团队, name: recipient, widget: string, hint: "填写获奖个人、团队或项目"}
       - {label: 颁奖方, name: awarder, widget: string, required: false, hint: "可选，填写颁奖单位或项目名称"}
       - {label: 级别, name: level, widget: string, required: false, hint: "可选，例如 最佳论文 / 国家级 / 省级 / 校级"}
-      - {label: 摘要, name: summary, widget: text}
-      - {label: 正文, name: body, widget: markdown}
+      - {label: 摘要, name: summary, widget: text, required: false}
+      - {label: 正文, name: body, widget: markdown, required: false}
