@@ -1,9 +1,28 @@
 {
-    "source": "DBLP author record 57/5135",
+    "source": "DBLP author record 57/5135 with verified recent additions",
     "source_url": "https://dblp.org/pid/57/5135.html",
-    "retrieved": "2026-07-15",
-    "count": 244,
+    "retrieved": "2026-08-05",
+    "count": 245,
     "years": [
+        {
+            "year": 2026,
+            "count": 1,
+            "items": [
+                {
+                    "year": 2026,
+                    "type": "article",
+                    "title": "Long-Term Health Prediction for Power Diodes Using Non-Uniform Kalman Filter",
+                    "authors": [
+                        "Chao Guo",
+                        "Zhonghai Lu"
+                    ],
+                    "venue": "IEEE Transactions on Reliability",
+                    "pages": "",
+                    "link": "https://doi.org/10.1109/TR.2026.3719753",
+                    "dblp": ""
+                }
+            ]
+        },
         {
             "year": 2025,
             "count": 4,
@@ -3938,6 +3957,19 @@
         }
     ],
     "publications": [
+        {
+            "year": 2026,
+            "type": "article",
+            "title": "Long-Term Health Prediction for Power Diodes Using Non-Uniform Kalman Filter",
+            "authors": [
+                "Chao Guo",
+                "Zhonghai Lu"
+            ],
+            "venue": "IEEE Transactions on Reliability",
+            "pages": "",
+            "link": "https://doi.org/10.1109/TR.2026.3719753",
+            "dblp": ""
+        },
         {
             "year": 2025,
             "type": "article",
