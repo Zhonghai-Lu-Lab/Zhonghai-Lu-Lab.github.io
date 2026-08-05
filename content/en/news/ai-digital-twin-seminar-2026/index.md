@@ -24,13 +24,11 @@ Maintenance is a key enabler of Industry 5.0 as it directly impacts the resilien
 
 In this talk, we will discuss some of our recent work aimed at addressing these limitations. We present a digital twin modeling framework for failure behavior based on stochastic hybrid systems, along with digital twin-supported deep learning frameworks for PdM (fault diagnosis) and PsM (remaining useful life aware control). Finally, we share recent works applying causal inference to identify the correct causal effect from observational data and support maintenance optimization, validated on a real application from our industrial partner RTE.
 
-![Seminar poster](/images/news/seminar-aug2026/poster.png)
-
 ## About the Speaker
 
-![Prof. Zhiguo ZENG](/images/news/seminar-aug2026/speaker.png)
+![Prof. Zhiguo ZENG](/images/news/seminar-aug2026/speaker-portrait.png)
 
-Prof. Zhiguo ZENG received the Ph.D. degree in reliability engineering from Beihang University in 2016. After receiving his PhD, he joined CentraleSupélec, Université Paris-Saclay, and became a full professor in 2023. His research focuses on the characterization and modeling of the failure/repair/maintenance behavior of components, complex systems, and their reliability, maintainability, prognostics, safety, vulnerability, and security.
+**Prof. Zhiguo ZENG** received the Ph.D. degree in reliability engineering from Beihang University in 2016. After receiving his PhD, he joined CentraleSupélec, Université Paris-Saclay, and became a full professor in 2023. His research focuses on the characterization and modeling of the failure/repair/maintenance behavior of components, complex systems, and their reliability, maintainability, prognostics, safety, vulnerability, and security.
 
 Dr. ZENG is an author/co-author of more than 100 papers in highly recognized international journals and conferences. He is recognized as Top Scholar by ScholarGPS and top 2% scholar by Elsevier and Stanford University. His research has been funded by important government funding agencies like ANR and ERC, and also important industrial companies like EDF, SNCF, Orange, and GE Healthcare. He is editorial board member of *International Journal of Data Analysis Techniques and Strategies* and *Journal of Uncertain Systems*, and the leading guest editor of the special issue on "Dependent failure modeling" of the *Journal of Applied Science*.
 

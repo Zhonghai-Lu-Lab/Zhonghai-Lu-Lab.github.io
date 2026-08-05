@@ -24,13 +24,11 @@ image: /images/news/seminar-aug2026/poster.png
 
 本报告将介绍我们在克服这些局限方面的若干进展：基于随机混合系统的失效行为数字孪生建模框架、用于 PdM（故障诊断）和 PsM（剩余寿命感知控制）的数字孪生支持的深度学习框架，以及将因果推断应用于从观测数据中识别正确因果效应、支持维护优化的最新成果——这些工作已在工业合作伙伴 RTE 的真实应用场景中得到了验证。
 
-![学术报告海报](/images/news/seminar-aug2026/poster.png)
-
 ## 主讲人简介
 
-![曾志国教授](/images/news/seminar-aug2026/speaker.png)
+![曾志国教授](/images/news/seminar-aug2026/speaker-portrait.png)
 
-曾志国教授于 2016 年在北京航空航天大学可靠性工程专业取得博士学位。博士毕业后加入巴黎萨克雷中央理工学院（Université Paris-Saclay），2023 年晋升为全职教授。他的研究方向聚焦于组件和复杂系统的失效 / 修复 / 维护行为表征与建模，及其可靠性、可维护性、预测性、安全性、脆弱性和安全性。
+**曾志国教授**于 2016 年在北京航空航天大学可靠性工程专业取得博士学位。博士毕业后加入巴黎萨克雷中央理工学院（Université Paris-Saclay），2023 年晋升为全职教授。他的研究方向聚焦于组件和复杂系统的失效 / 修复 / 维护行为表征与建模，及其可靠性、可维护性、预测性、安全性、脆弱性和安全性。
 
 曾教授已发表百余篇高水平国际期刊与会议论文，被 ScholarGPS 评为顶级学者，被 Elsevier 和斯坦福大学评为全球前 2% 学者。他的研究得到 ANR、ERC 等重要政府资助机构以及 EDF、SNCF、Orange、GE 医疗等行业领军企业的资助。他是 *International Journal of Data Analysis Techniques and Strategies* 和 *Journal of Uncertain Systems* 的编委，并担任 *Journal of Applied Science* "Dependent failure modeling" 特刊的首席客座编辑。
 
