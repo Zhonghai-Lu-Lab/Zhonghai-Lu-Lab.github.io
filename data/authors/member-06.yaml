@@ -1,11 +1,21 @@
 schema: hugoblox/author/v1
 slug: member-06
 weight: 60
-name: {display: Jinhuang Lin, given: Jinhuang, family: Lin}
+name:
+  display: Jinhuang Lin
+  given: Jinhuang
+  family: Lin
 role: PhD Student
-bio: PhD student in Microelectronics at HKUST(GZ).
+avatar: /images/team/member-06.jpg
+bio: |
+  Jinhuang Lin received the B.Eng degree in Microelectronic Science and Engineering from Sun Yat-sen University, China, in 2021. He received the Master degree in Electrical Engineering from Delft University of Technology, the Netherlands, in 2023. Before joining Prof. Lu's team as a PhD student in 2025, he worked as a chip architecture engineer at vivo.
 affiliations:
   - name: Thrust of Microelectronics, HKUST(GZ)
-interests: [Microelectronics]
+interests:
+  - Neuromorphic Chip
+  - Network on Chip
+  - VLSI design
+  - Computer Architecture
+  - AI Hardware Accelerator
 links:
   - {icon: at-symbol, url: 'mailto:jlin277@connect.hkust-gz.edu.cn', label: Email Jinhuang Lin}
