@@ -58,9 +58,11 @@
     let active = 0;
     let interval;
     let pointerStart = null;
+    const currentDuration = () => active === 0 ? 11000 : 7000;
 
     const resetTimerVisual = () => {
       if (!timer || reducedMotion) return;
+      timer.style.setProperty('--carousel-duration', `${currentDuration()}ms`);
       timer.classList.remove('is-running');
       void timer.offsetWidth;
       timer.classList.add('is-running');
@@ -79,10 +81,15 @@
       });
       resetTimerVisual();
     };
-    const stop = () => window.clearInterval(interval);
+    const stop = () => window.clearTimeout(interval);
     const start = () => {
       stop();
-      if (!reducedMotion && slides.length > 1) interval = window.setInterval(() => show(active + 1), 7000);
+      if (!reducedMotion && slides.length > 1) {
+        interval = window.setTimeout(() => {
+          show(active + 1);
+          start();
+        }, currentDuration());
+      }
       resetTimerVisual();
     };
     carousel.querySelector('[data-carousel-prev]')?.addEventListener('click', () => { show(active - 1); start(); });

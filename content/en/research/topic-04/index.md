@@ -1,5 +1,6 @@
 ---
 cms_managed: true
+draft: true
 title: Embedded Systems
 summary: Computing systems designed for dedicated functions under performance, power, and reliability constraints.
 eyebrow: Embedded Computing

@@ -1,0 +1,14 @@
+name:
+  display: Ruichi Han
+  given: Ruichi
+  family: Han
+  chinese: 韩瑞驰
+role: 博士研究生
+enrollment: 2026 秋季
+education:
+  - year: '2024'
+    detail: 获得浙江大学电子信息工程学士学位
+  - year: 目前
+    detail: 于瑞典皇家理工学院攻读电子与嵌入式系统硕士学位
+affiliations:
+  - name: 香港科技大学（广州）功能枢纽微电子学域

@@ -1,5 +1,9 @@
 name: {display: Jinhuang Lin, given: Jinhuang, family: Lin}
 role: 博士研究生
-bio: 香港科技大学（广州）微电子学域博士研究生。
+enrollment: 2025 秋季
+education:
+  - year: '2021'
+    detail: 获得中山大学微电子科学与工程学士学位
+  - year: '2023'
+    detail: 获得代尔夫特理工大学电气工程硕士学位
 affiliations: [{name: 香港科技大学（广州）功能枢纽微电子学域}]
-interests: [微电子学]

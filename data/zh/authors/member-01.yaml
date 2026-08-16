@@ -1,5 +1,7 @@
 name: {display: Hongji Pei, given: Hongji, family: Pei}
 role: 博士研究生
-bio: 香港科技大学（广州）微电子学域博士研究生。
+enrollment: 2025 秋季
+education:
+  - year: '2023'
+    detail: 获得电子科技大学微电子科学与工程学士学位
 affiliations: [{name: 香港科技大学（广州）功能枢纽微电子学域}]
-interests: [微电子学]

@@ -1,19 +1,19 @@
 schema: hugoblox/author/v1
 slug: member-05
-weight: 50
+weight: 40
 name:
   display: Yizhe Xiong
   given: Yizhe
   family: Xiong
 role: PhD Student
+enrollment: Fall 2025
 avatar: /images/team/yizhe-xiong.jpg
-bio: |
-  Mr. XIONG Yizhe has received the B.Eng degree in 2024 from Harbin Institute of Technology, Shenzhen. Then he has received the Master degree from National University of Singapore, Singapore. He is now a Ph.D. Student in the microelectronics thrust of function hub, the Hong Kong University of Science and Technology, Guangzhou under the supervision of Prof. Zhonghai Lu.
+education:
+  - year: '2024'
+    detail: B.Eng., Harbin Institute of Technology, Shenzhen
+  - year: Year to be confirmed
+    detail: Master's degree, National University of Singapore
 affiliations:
   - name: Thrust of Microelectronics, HKUST(GZ)
-interests:
-  - Circuit resilience on network-on-chip
-  - Chiplet
-  - Dependable and fault-tolerant computing
 links:
   - {icon: at-symbol, url: 'mailto:yxiong791@connect.hkust-gz.edu.cn', label: Email Yizhe Xiong}

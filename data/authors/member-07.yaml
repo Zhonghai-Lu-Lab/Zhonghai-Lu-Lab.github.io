@@ -1,19 +1,18 @@
 schema: hugoblox/author/v1
 slug: member-07
-weight: 70
+weight: 60
 name:
   display: Yang Chen
   given: Yang
   family: Chen
 role: PhD Student
+enrollment: Fall 2025
 avatar: /images/team/member-07.jpg
-bio: |
-  I am currently a Ph.D. student at The Hong Kong University of Science and Technology (Guangzhou). I received my undergraduate degree from Fudan University and previously worked as a Senior Engineer in the Autonomous Driving Chip Department at NIO. My current research focuses on chiplet-based computer architectures, Network-on-Chip systems, and UCIe-based die-to-die communication. My broader research interests include computer architecture, on-chip and inter-chiplet interconnects, operating systems, and system-level resource scheduling for heterogeneous chiplet systems.
+education:
+  - year: Year to be confirmed
+    detail: Bachelor's degree, Fudan University
 affiliations:
   - name: Thrust of Microelectronics, HKUST(GZ)
-interests:
-  - Chiplet
-  - Network calculus
 links:
   - {icon: at-symbol, url: 'mailto:cyang393@connect.hkust-gz.edu.cn', label: Email Yang Chen}
   - {icon: github, url: 'https://github.com/Shirleyyc', label: GitHub}

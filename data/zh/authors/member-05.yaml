@@ -1,5 +1,9 @@
 name: {display: Yizhe Xiong, given: Yizhe, family: Xiong}
 role: 博士研究生
-bio: 香港科技大学（广州）微电子学域博士研究生。
+enrollment: 2025 秋季
+education:
+  - year: '2024'
+    detail: 获得哈尔滨工业大学（深圳）工学学士学位
+  - year: 年份待确认
+    detail: 获得新加坡国立大学硕士学位
 affiliations: [{name: 香港科技大学（广州）功能枢纽微电子学域}]
-interests: [微电子学]

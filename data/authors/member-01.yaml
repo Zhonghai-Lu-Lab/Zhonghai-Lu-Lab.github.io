@@ -1,20 +1,18 @@
 schema: hugoblox/author/v1
 slug: member-01
-weight: 10
+weight: 30
 name:
   display: Hongji Pei
   given: Hongji
   family: Pei
 role: PhD Student
+enrollment: Fall 2025
 avatar: /images/team/member-01.jpg
-bio: |
-  Hongji Pei received the B.S. degree in Microelectronics from the University of Electronic Science and Technology of China, Chengdu, China, in 2023. He is currently working toward the Ph.D. degree in microelectronics at the Hong Kong University of Science and Technology (Guangzhou), China.
+education:
+  - year: '2023'
+    detail: B.S. in Microelectronics, University of Electronic Science and Technology of China
 affiliations:
   - name: Thrust of Microelectronics, HKUST(GZ)
-interests:
-  - Prognostics and Health Management
-  - Reliability
-  - Semiconductor Power Devices
 links:
   - {icon: at-symbol, url: 'mailto:hpei838@connect.hkust-gz.edu.cn', label: Email Hongji Pei}
   - {icon: github, url: 'https://github.com/hongji-lgtm', label: GitHub}
