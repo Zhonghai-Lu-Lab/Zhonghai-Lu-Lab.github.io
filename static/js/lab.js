@@ -73,6 +73,14 @@
         const selected = index === active;
         slide.classList.toggle('is-active', selected);
         slide.setAttribute('aria-hidden', String(!selected));
+        if (selected && !reducedMotion) {
+          slide.querySelectorAll('[data-current-delay]').forEach(pulse => {
+            window.setTimeout(() => {
+              if (!slide.classList.contains('is-active')) return;
+              pulse.querySelectorAll('animateMotion, animate').forEach(animation => animation.beginElement?.());
+            }, Number(pulse.dataset.currentDelay || 0));
+          });
+        }
       });
       dots.forEach((dot, index) => {
         const selected = index === active;
