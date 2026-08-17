@@ -1,10 +1,15 @@
 ---
 cms_managed: true
-title: Prognostics and Health Management
-summary: Health assessment, fault prognostics, and reliability management for electronic chips and systems.
-eyebrow: PHM
+title: Reliability
+summary: |
+  Trustworthy and Dependable System
+  PHM (Prognostics and Health Management)
+eyebrow: Reliability
 number: '03'
 weight: 3
 ---
 
-This direction develops methods for condition monitoring, health assessment, fault diagnosis and prognostics, and reliability management of electronic chips and systems.
+This direction focuses on trustworthy system design and the prognostics & health management of electronic components and systems. Research topics under this theme include:
+
+- Trustworthy and Dependable System
+- PHM (Prognostics and Health Management)

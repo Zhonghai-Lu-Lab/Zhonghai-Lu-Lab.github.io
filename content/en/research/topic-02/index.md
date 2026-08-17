@@ -1,12 +1,15 @@
 ---
 cms_managed: true
-title: Chiplet Networks and System Architecture
-summary: Scalable interconnects and heterogeneous integration for high-performance chiplet-based computing systems.
-eyebrow: Chiplet Systems
+title: Intelligence
+summary: |
+  AI Hardware Accelerators
+  Embedded Intelligence
+eyebrow: Intelligence
 number: '02'
 weight: 2
 ---
 
-This direction studies **chiplet networks and chiplet-based system architecture** for the post-Moore era. Heterogeneous integration connects multiple specialized chiplets into a larger computing system, providing a practical path toward sustained performance and computing capability.
+This direction studies hardware-level acceleration and embedded intelligence for AI workloads. Research topics under this theme include:
 
-Our work focuses on scalable interconnect architectures, open chiplet-based computing systems, and the communication and integration challenges that arise when diverse chiplets operate as one high-performance platform.
+- AI Hardware Accelerators
+- Embedded Intelligence
