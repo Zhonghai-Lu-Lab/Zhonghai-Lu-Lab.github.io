@@ -239,7 +239,7 @@
         <div class="publication-years">
           {{ range $index, $group := $bibliography.years }}
             <details class="publication-year"{{ if eq $index 0 }} open{{ end }}>
-              <summary><strong>{{ $group.year }}</strong><span>{{ $group.count }} {{ if $zh }}篇{{ else }}papers{{ end }}</span></summary>
+              <summary><strong>{{ $group.year }}</strong><span>{{ $group.count }} {{ if $zh }}篇{{ else }}{{ if eq (len $group.items) 1 }}paper{{ else }}papers{{ end }}{{ end }}</span></summary>
               <ol>
                 {{ range $group.items }}
                   <li>
