@@ -234,6 +234,11 @@
           {{ end }}
         </div></section>
         {{ end }}{{ end }}
+        {{ with hugo.Data.visitors }}
+        <section class="team-group"><header class="team-group-header"><h3>{{ .title }}</h3></header><ul class="visitor-list">
+          {{ range .members }}<li><strong class="visitor-name">{{ .name }}</strong><span class="visitor-meta"><span class="visitor-aff">{{ .affiliation }}</span><span class="visitor-period">{{ .period }}</span></span></li>{{ end }}
+        </ul></section>
+        {{ end }}
       </div>
     </section>
 

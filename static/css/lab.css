@@ -253,6 +253,13 @@ a:hover .inline-link span { transform: translateX(5px); }
 .team-group-header { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid rgba(16,36,42,.24); }
 .team-group-header h3 { margin: 0; font-family: Georgia,"Times New Roman","Noto Serif SC",serif; font-size: 28px; font-weight: 500; }
 .team-group-header span { color: var(--teal); font-size: 10px; letter-spacing: .12em; }
+.visitor-list { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.visitor-list li { display: grid; grid-template-columns: 135px 1fr; gap: 0 16px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid rgba(16,36,42,.12); font-size: 15px; line-height: 1.5; }
+.visitor-list .visitor-name { font-weight: 650; color: #10242a; white-space: nowrap; }
+.visitor-list .visitor-meta { color: var(--muted); display: flex; flex-direction: column; gap: 2px; }
+.visitor-list .visitor-aff { display: block; }
+.visitor-list .visitor-period { display: block; }
+@media (max-width: 700px) { .visitor-list { grid-template-columns: 1fr; } .visitor-list li { grid-template-columns: 1fr; } }
 .member-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 22px; margin-top: 20px; }
 .member-card { min-height: 420px; display: flex; flex-direction: column; overflow: hidden; background: #fff; border: 1px solid rgba(16,36,42,.12); border-radius: 12px; box-shadow: 0 8px 22px rgba(8,46,58,.07); transition: background .3s, transform .35s var(--ease), box-shadow .35s; }
 .member-card:hover { background: var(--white); transform: translateY(-4px); box-shadow: 0 20px 42px rgba(8,46,58,.1); }
