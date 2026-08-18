@@ -6,8 +6,8 @@
   <meta name="description" content="{{ .Params.summary | default .Site.Params.hugoblox.identity.description }}">
   <meta name="theme-color" content="#082e3a">
   <title>{{ .Title }} · {{ .Site.Title }}</title>
-  <link rel="stylesheet" href="{{ "css/lab.css" | relURL }}?v=20260818-1">
-  <script defer src="{{ "js/lab.js" | relURL }}?v=20260818-1"></script>
+  <link rel="stylesheet" href="{{ "css/lab.css" | relURL }}?v=20260818-2">
+  <script defer src="{{ "js/lab.js" | relURL }}?v=20260818-2"></script>
 </head>
 <body>
   {{ $zh := eq .Site.Language.Lang "zh" }}
@@ -112,6 +112,11 @@
             </svg>
             </div>
             <div class="hero-photo-lighting" aria-hidden="true"><b class="photo-letter-a"></b><b class="photo-letter-i"></b><b class="photo-letter-r"></b><i class="photo-light-a"></i><i class="photo-light-i"></i><i class="photo-light-r"></i></div>
+            <div class="hero-air-meanings" aria-hidden="true">
+              <span class="hero-meaning-a">Architecture</span>
+              <span class="hero-meaning-i">Intelligence</span>
+              <span class="hero-meaning-r">Reliability</span>
+            </div>
             <svg class="hero-current-overlay" viewBox="0 0 1672 939" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
               <g class="hero-current-pulses">
                 <circle r="4.2" data-current-delay="80"><animateMotion dur="2.55s" begin="indefinite" fill="freeze" path="M8 390L202 390L352 438L476 470"/><animate attributeName="opacity" values="0;.95;.95;0" keyTimes="0;.12;.82;1" dur="2.55s" begin="indefinite" fill="freeze"/></circle>
