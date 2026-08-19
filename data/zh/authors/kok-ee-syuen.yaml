@@ -5,8 +5,8 @@ name:
 role: 博士研究生
 enrollment: 2026 秋季
 interests:
-- Network on Chiplet
-- Chiplet-based Systems
+- 芯粒互连网络
+- 芯粒系统
 education:
 - year: '2023'
   detail: 获得厦门大学集成电路设计与集成系统学士学位

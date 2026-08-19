@@ -202,7 +202,7 @@
           {{ range (where .Site.RegularPages "Section" "projects").ByWeight }}
           <a class="project-card reveal" href="{{ .RelPermalink }}">
             <h3>{{ .Title }}</h3>
-            {{ with .Params.funded_by }}<div class="project-funded"><img src="/images/nsfc-logo.png" alt="NSFC"><span>Funded by NSFC</span></div>{{ end }}
+            {{ with .Params.funded_by }}<div class="project-funded"><img src="/images/nsfc-logo.png" alt="NSFC"><span>{{ if $zh }}国家自然科学基金资助{{ else }}Funded by NSFC{{ end }}</span></div>{{ end }}
             {{ with .Params.duration }}<div class="project-duration">{{ . }}</div>{{ end }}
           </a>
           {{ end }}

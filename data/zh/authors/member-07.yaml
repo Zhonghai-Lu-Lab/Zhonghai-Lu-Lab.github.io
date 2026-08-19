@@ -10,10 +10,10 @@ education:
 affiliations:
 - name: 香港科技大学（广州）功能枢纽微电子学域
 interests:
-- computer architecture
-- on-chip and inter-chiplet interconnects
-- operating systems
-- system-level resource scheduling for heterogeneous chiplet systems
+- 计算机体系结构
+- 片上互连与芯粒间互连
+- 操作系统
+- 异构芯粒系统的系统级资源调度
 experience:
 - year: 2022-2025
   detail: 蔚来汽车自动驾驶芯片部门高级工程师

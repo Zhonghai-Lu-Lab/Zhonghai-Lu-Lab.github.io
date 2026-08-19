@@ -13,6 +13,6 @@ education:
 affiliations:
 - name: 香港科技大学（广州）功能枢纽微电子学域
 interests:
-- hardware accelerators for ML
-- computer architecture
-- network-on-chip
+- 机器学习硬件加速器
+- 计算机体系结构
+- 片上网络

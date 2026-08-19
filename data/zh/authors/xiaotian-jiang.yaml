@@ -5,9 +5,9 @@ name:
 role: 博士研究生
 enrollment: 2026 秋季
 interests:
-  - Computer Architecture
-  - Network On-Chip
-  - AI Accelerator
+  - 计算机体系结构
+  - 片上网络
+  - 人工智能加速器
 education:
   - year: '2024'
     detail: 获得西北工业大学计算机科学与技术学士学位

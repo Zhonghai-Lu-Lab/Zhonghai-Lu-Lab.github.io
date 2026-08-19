@@ -30,7 +30,7 @@
       <a href="#overview">{{ if $zh }}个人简介{{ else }}Overview{{ end }}</a>
       <a href="#profile-publications">{{ if $zh }}论文成果{{ else }}Publications{{ end }}</a>
       <a href="#research-interests">{{ if $zh }}研究方向{{ else }}Research Interests{{ end }}</a>
-      <a href="#rpg-supervision">{{ if $zh }}研究生指导{{ else }}RPG Supervision{{ end }}</a>
+      <a href="#rpg-supervision">{{ if $zh }}博士研究生{{ else }}PhD Students{{ end }}</a>
     </nav>
 
     <section id="overview" class="faculty-section faculty-overview">
@@ -46,7 +46,7 @@
 
     <section id="profile-publications" class="faculty-section faculty-publications">
       <div class="faculty-section-heading">
-        <div><p class="section-kicker">HKUST(GZ)</p><h2>{{ if $zh }}重点论文{{ else }}Selected Publications{{ end }}</h2></div>
+        <div><p class="section-kicker">HKUST(GZ)</p><h2>{{ if $zh }}重点论文成果{{ else }}Selected Publications{{ end }}</h2></div>
         <a href="https://repository.hkust-gz.edu.cn/" target="_blank" rel="noopener">{{ if $zh }}港科广知识库{{ else }}HKUST(GZ) Repository{{ end }}</a>
       </div>
       <div class="selected-publication-list">
@@ -58,28 +58,7 @@
           </article>
         {{ end }}
       </div>
-
-      <div class="complete-bibliography-heading">
-        <div><p class="section-kicker">DBLP</p><h2>{{ if $zh }}完整论文列表{{ else }}Complete Publication List{{ end }}</h2></div>
-        <p>{{ $bibliography.count }} {{ if $zh }}条记录，按年份折叠显示。点击论文标题访问 DOI 或 DBLP 永久页面。{{ else }}records grouped by year. Each title links to its DOI or permanent DBLP record.{{ end }}</p>
-      </div>
-      <div class="publication-years">
-        {{ range $index, $group := $bibliography.years }}
-          <details class="publication-year"{{ if eq $index 0 }} open{{ end }}>
-            <summary><strong>{{ $group.year }}</strong><span>{{ $group.count }} {{ if $zh }}篇{{ else }}publications{{ end }}</span></summary>
-            <ol>
-              {{ range $group.items }}
-                <li>
-                  <h3><a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a></h3>
-                  <p>{{ delimit .authors ", " }}</p>
-                  <span>{{ .venue }}{{ with .pages }} · {{ . }}{{ end }}</span>
-                </li>
-              {{ end }}
-            </ol>
-          </details>
-        {{ end }}
-      </div>
-      <p class="publication-source">{{ if $zh }}完整书目来源：{{ else }}Complete bibliography source: {{ end }}<a href="{{ $bibliography.source_url }}" target="_blank" rel="noopener">DBLP</a> · {{ $bibliography.retrieved }}</p>
+      <p class="publication-source">{{ if $zh }}更多论文请访问 <a href="{{ $bibliography.source_url }}" target="_blank" rel="noopener">DBLP</a>、<a href="https://scholar.google.com/citations?user=8qbwszcAAAAJ" target="_blank" rel="noopener">Google Scholar</a> 或 <a href="https://orcid.org/0000-0003-0061-3475" target="_blank" rel="noopener">ORCID</a>。{{ else }}For the complete publication record, visit <a href="{{ $bibliography.source_url }}" target="_blank" rel="noopener">DBLP</a>, <a href="https://scholar.google.com/citations?user=8qbwszcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>, or <a href="https://orcid.org/0000-0003-0061-3475" target="_blank" rel="noopener">ORCID</a>.{{ end }}</p>
     </section>
 
     <section id="research-interests" class="faculty-section faculty-research">
@@ -89,8 +68,8 @@
     </section>
 
     <section id="rpg-supervision" class="faculty-section faculty-rpg">
-      <p class="section-kicker">RPG SUPERVISION</p>
-      <h2>{{ if $zh }}研究型研究生指导{{ else }}Research Postgraduate (RPG) Supervision{{ end }}</h2>
+      <p class="section-kicker">PhD</p>
+      <h2>{{ if $zh }}博士研究生{{ else }}PhD Students{{ end }}</h2>
       <div class="rpg-grid">
         {{ range sort (where hugo.Data.team.members "group" "PhD Students") "weight" }}
           {{ $student := partial "lab/person.html" (dict "slug" .slug "lang" $.Site.Language.Lang) }}

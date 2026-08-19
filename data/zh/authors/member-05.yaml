@@ -12,5 +12,5 @@ education:
 affiliations:
 - name: 香港科技大学（广州）功能枢纽微电子学域
 interests:
-- Circuit resilience on network-on-chip, chiplet
-- Dependable and fault-tolerant computing
+- 片上网络与芯粒系统的电路级韧性
+- 可靠与容错计算

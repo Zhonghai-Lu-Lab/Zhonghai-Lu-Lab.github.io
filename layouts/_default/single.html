@@ -1,7 +1,34 @@
 {{ define "main" }}
-<article class="article-shell">
+{{ $zh := eq .Site.Language.Lang "zh" }}
+{{ if eq .Section "projects" }}
+<article class="article-shell project-detail">
+  <a class="article-back" href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
+  <header class="article-header project-header">
+    <p class="section-index">{{ if $zh }}研究项目{{ else }}Research Project{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+  </header>
+  <section class="project-information" aria-labelledby="project-information-title">
+    <p class="section-index">Project Information</p>
+    <h2 id="project-information-title">{{ if $zh }}项目信息{{ else }}Project Information{{ end }}</h2>
+    <dl>
+      {{ with .Params.status }}<div><dt>{{ if $zh }}项目状态{{ else }}Status{{ end }}</dt><dd>{{ if and $zh (eq . "Active") }}在研{{ else }}{{ . }}{{ end }}</dd></div>{{ end }}
+      {{ with .Params.funded_by }}<div><dt>{{ if $zh }}资助机构{{ else }}Funding{{ end }}</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.grant_no }}<div><dt>{{ if $zh }}项目编号{{ else }}Grant Number{{ end }}</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.duration }}<div><dt>{{ if $zh }}项目周期{{ else }}Project Period{{ end }}</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.event }}<div><dt>{{ if $zh }}项目展示{{ else }}Project Presentation{{ end }}</dt><dd>{{ . }}</dd></div>{{ end }}
+    </dl>
+  </section>
+  <section class="project-abstract" aria-labelledby="project-abstract-title">
+    <p class="section-index">Abstract</p>
+    <h2 id="project-abstract-title">{{ if $zh }}项目摘要{{ else }}Abstract{{ end }}</h2>
+    <div>{{ .Params.abstract | markdownify }}</div>
+  </section>
+</article>
+{{ else }}
+<article class="article-shell article-section-{{ .Section }}">
   <a class="article-back" href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
   <header class="article-header"><p class="section-index">{{ .Section }}{{ with .Date }} · {{ .Format "2006.01.02" }}{{ end }}{{ with .Params.status }} · {{ . }}{{ end }}</p><h1>{{ .Title }}</h1>{{ with .Params.summary }}<p>{{ . }}</p>{{ end }}{{ with .Params.funded_by }}<p class="article-funded">{{ . }}</p>{{ end }}{{ with .Params.duration }}<p class="article-duration">{{ . }}</p>{{ end }}</header>
   <div class="article-body">{{ with .Params.image }}<img class="article-feature-image" src="{{ . | relURL }}" alt="{{ $.Params.image_alt | default $.Title }}">{{ end }}{{ .Content }}</div>
 </article>
+{{ end }}
 {{ end }}
