@@ -1,17 +1,20 @@
 name:
-  display: 李经纬
+  display: Jingwei Li
   given: Jingwei
   family: Li
-role: 博士研究生
-enrollment: 2025 春季
-education:
-- year: '2023'
-  detail: 获得东南大学学士学位
-- year: '2024'
-  detail: 获得瑞典皇家理工学院嵌入式系统硕士学位
+role: 博士研究生（第二学年）
+bio: '李精卫于 2023 年获得中国东南大学学士学位，2024 年获得瑞典皇家理工学院嵌入式系统硕士学位。目前正在香港科技大学（广州）攻读博士学位，研究方向为计算机体系结构与
+  AI 硬件加速器。
+
+  '
 affiliations:
 - name: 香港科技大学（广州）功能枢纽微电子学域
 interests:
 - 计算机体系结构
-- 芯粒系统
-- 人工智能硬件加速器
+- 芯粒
+- AI 硬件加速器
+education:
+- year: '2023'
+  detail: 获得东南大学电子科学与工程学士学位
+- year: '2024'
+  detail: 获得瑞典皇家理工学院嵌入式系统硕士学位

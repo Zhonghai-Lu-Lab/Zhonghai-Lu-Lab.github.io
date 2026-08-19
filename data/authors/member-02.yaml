@@ -5,24 +5,28 @@ name:
   display: Jingwei Li
   given: Jingwei
   family: Li
-role: PhD Student
-enrollment: Spring 2025
+role: Second-Year PhD Student
 avatar: /images/team/jingwei-li.png
-education:
-- year: '2023'
-  detail: B.S., Southeast University
-- year: '2024'
-  detail: M.S. in Embedded Systems, KTH Royal Institute of Technology
+bio: 'Jingwei Li received the B.S. degree from Southeast University, China, in 2023,
+  and the M.S. degree in embedded systems from KTH Royal Institute of Technology,
+  Sweden, in 2024. He is currently working toward the PhD degree with The Hong Kong
+  University of Science and Technology (Guangzhou). His research interests include
+  the fields of computer architecture and AI hardware accelerators.
+
+  '
 affiliations:
 - name: Thrust of Microelectronics, HKUST(GZ)
-links:
-- icon: at-symbol
-  url: mailto:jli739@connect.hkust-gz.edu.cn
-  label: Email Jingwei Li
-- icon: github
-  url: https://github.com/NinjaVVV
-  label: GitHub
 interests:
 - Computer architecture
 - Chiplet
 - AI hardware accelerators
+links:
+- icon: at-symbol
+  url: mailto:jli739@connect.hkust-gz.edu.cn
+  label: Email Jingwei Li
+enrollment: Spring 2025
+education:
+- year: '2023'
+  detail: BSc in Electronic Science and Engineering, Southeast University
+- year: '2024'
+  detail: MSc in Embedded Systems, KTH Royal Institute of Technology
