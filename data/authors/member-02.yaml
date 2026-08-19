@@ -9,11 +9,17 @@ role: PhD Student
 enrollment: Spring 2025
 avatar: /images/team/jingwei-li.png
 education:
-  - year: '2023'
-    detail: B.S., Southeast University
-  - year: '2024'
-    detail: M.S. in Embedded Systems, KTH Royal Institute of Technology
+- year: '2023'
+  detail: B.S., Southeast University
+- year: '2024'
+  detail: M.S. in Embedded Systems, KTH Royal Institute of Technology
 affiliations:
-  - name: Thrust of Microelectronics, HKUST(GZ)
+- name: Thrust of Microelectronics, HKUST(GZ)
 links:
-  - {icon: at-symbol, url: 'mailto:jli739@connect.hkust-gz.edu.cn', label: Email Jingwei Li}
+- icon: at-symbol
+  url: mailto:jli739@connect.hkust-gz.edu.cn
+  label: Email Jingwei Li
+interests:
+- Computer architecture
+- Chiplet
+- AI hardware accelerators

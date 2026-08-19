@@ -1,0 +1,27 @@
+schema: hugoblox/author/v1
+slug: kok-ee-syuen
+weight: 5
+name:
+  display: Kok Ee Syuen
+  given: Ee Syuen
+  family: Kok
+role: PhD Student
+enrollment: Fall 2026
+avatar: /images/team/kok-ee-syuen.jpg
+interests:
+- Network on Chiplet
+- Chiplet-based Systems
+education:
+- year: '2023'
+  detail: B.Sc. in Integrated Circuit Design and Integration Systems, Xiamen University
+- year: '2026'
+  detail: M.Sc. in Integrated Circuit Science and Engineering, Xiamen University
+affiliations:
+- name: Thrust of Microelectronics, HKUST(GZ)
+links:
+- icon: at-symbol
+  url: mailto:ksyuuen@connect.hkust-gz.edu.cn
+  label: Email Kok Ee Syuen
+- icon: github
+  url: https://github.com/syuennykok
+  label: GitHub

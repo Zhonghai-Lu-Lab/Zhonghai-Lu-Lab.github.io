@@ -9,11 +9,22 @@ role: PhD Student
 enrollment: Fall 2025
 avatar: /images/team/chen-yang.jpg
 education:
-  - year: '2022'
-    detail: Bachelor's degree, Fudan University
+- year: '2022'
+  detail: Bachelor's degree, Fudan University
 affiliations:
-  - name: Thrust of Microelectronics, HKUST(GZ)
+- name: Thrust of Microelectronics, HKUST(GZ)
 links:
-  - {icon: at-symbol, url: 'mailto:cyang393@connect.hkust-gz.edu.cn', label: Email Yang Chen}
-  - {icon: github, url: 'https://github.com/Shirleyyc', label: GitHub}
-  - {icon: orcid, url: 'https://orcid.org/0009-0005-0103-5306', label: ORCID}
+- icon: at-symbol
+  url: mailto:cyang393@connect.hkust-gz.edu.cn
+  label: Email Yang Chen
+- icon: github
+  url: https://github.com/Shirleyyc
+  label: GitHub
+- icon: orcid
+  url: https://orcid.org/0009-0005-0103-5306
+  label: ORCID
+interests:
+- computer architecture
+- on-chip and inter-chiplet interconnects
+- operating systems
+- system-level resource scheduling for heterogeneous chiplet systems

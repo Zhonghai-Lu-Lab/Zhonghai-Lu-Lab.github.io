@@ -1,7 +1,16 @@
-name: {display: Chen Yang, given: Chen, family: Yang}
+name:
+  display: 杨晨
+  given: Chen
+  family: Yang
 role: 博士研究生
 enrollment: 2025 秋季
 education:
-  - year: '2022'
-    detail: 获得复旦大学学士学位
-affiliations: [{name: 香港科技大学（广州）功能枢纽微电子学域}]
+- year: '2022'
+  detail: 获得复旦大学学士学位
+affiliations:
+- name: 香港科技大学（广州）功能枢纽微电子学域
+interests:
+- computer architecture
+- on-chip and inter-chiplet interconnects
+- operating systems
+- system-level resource scheduling for heterogeneous chiplet systems

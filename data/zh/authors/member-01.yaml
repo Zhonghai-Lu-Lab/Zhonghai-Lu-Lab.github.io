@@ -1,7 +1,24 @@
-name: {display: Hongji Pei, given: Hongji, family: Pei}
+name:
+  display: 裴鸿基
+  given: Hongji
+  family: Pei
 role: 博士研究生
 enrollment: 2025 秋季
 education:
-  - year: '2023'
-    detail: 获得电子科技大学微电子科学与工程学士学位
-affiliations: [{name: 香港科技大学（广州）功能枢纽微电子学域}]
+- year: '2023'
+  detail: 获得电子科技大学微电子科学与工程学士学位
+affiliations:
+- name: 香港科技大学（广州）功能枢纽微电子学域
+interests:
+- Prognostics and Health Management
+- Reliability
+- Semiconductor Power Devices
+achievements:
+- title: PHM-AP 2025 数据挑战赛冠军
+  year: '2025'
+  venue: PHM-AP 2025
+  url: ''
+- title: 基于数字孪生的混合学习方法用于 HfZrOx 铁电二极管耐久性疲劳预测
+  year: '2026'
+  venue: R.A.M.S. Europe 2026
+  url: ''

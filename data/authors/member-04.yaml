@@ -9,12 +9,17 @@ role: PhD Student
 enrollment: Spring 2026
 avatar: /images/team/yushang-jin.jpg
 education:
-  - year: '2025'
-    detail: B.Eng. in Electronic Engineering, The University of Hong Kong
+- year: '2025'
+  detail: B.Eng. in Electronic Engineering, The University of Hong Kong
 affiliations:
-  - name: Thrust of Microelectronics, HKUST(GZ)
+- name: Thrust of Microelectronics, HKUST(GZ)
 links:
-  - {icon: at-symbol, url: 'mailto:yjin@connect.hkust-gz.edu.cn', label: Email Yushang Jin}
-  - icon: github
-    url: https://github.com/EricEricEricJin
-    label: GitHub
+- icon: at-symbol
+  url: mailto:yjin@connect.hkust-gz.edu.cn
+  label: Email Yushang Jin
+- icon: github
+  url: https://github.com/EricEricEricJin
+  label: GitHub
+interests:
+- Network-on-Chip
+- AI Accelerator

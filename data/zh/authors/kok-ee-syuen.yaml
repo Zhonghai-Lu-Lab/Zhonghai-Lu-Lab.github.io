@@ -1,0 +1,16 @@
+name:
+  display: 郭雨萱
+  given: Ee Syuen
+  family: Kok
+role: 博士研究生
+enrollment: 2026 秋季
+interests:
+- Network on Chiplet
+- Chiplet-based Systems
+education:
+- year: '2023'
+  detail: 获得厦门大学集成电路设计与集成系统学士学位
+- year: '2026'
+  detail: 获得厦门大学集成电路科学与工程硕士学位
+affiliations:
+- name: 香港科技大学（广州）功能枢纽微电子学域

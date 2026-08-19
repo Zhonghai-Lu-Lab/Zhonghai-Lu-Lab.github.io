@@ -6,8 +6,8 @@
   <meta name="description" content="{{ .Params.summary | default .Site.Params.hugoblox.identity.description }}">
   <meta name="theme-color" content="#082e3a">
   <title>{{ .Title }} · {{ .Site.Title }}</title>
-  <link rel="stylesheet" href="{{ "css/lab.css" | relURL }}?v=20260818-2">
-  <script defer src="{{ "js/lab.js" | relURL }}?v=20260818-2"></script>
+  <link rel="stylesheet" href="{{ "css/lab.css" | relURL }}?v=20260818-4">
+  <script defer src="{{ "js/lab.js" | relURL }}?v=20260818-4"></script>
 </head>
 <body>
   {{ $zh := eq .Site.Language.Lang "zh" }}
@@ -229,12 +229,13 @@
           {{ range . }}{{ $person := partial "lab/person.html" (dict "slug" .slug "lang" $.Site.Language.Lang) }}{{ $profileURL := printf "authors/%s/" .slug | relLangURL }}
           <article class="member-card reveal">
             <a class="member-avatar" href="{{ $profileURL }}" aria-label="{{ $person.name.display }}">{{ with $person.avatar }}<img src="{{ . | relURL }}" alt="{{ $person.name.display }}">{{ else }}<span>{{ substr $person.name.display 0 1 }}</span>{{ end }}</a>
-            <div class="member-card-body"><a class="member-name" href="{{ $profileURL }}"><strong>{{ $person.name.display }}</strong></a>{{ with $person.enrollment }}<p class="member-joined">{{ if $zh }}{{ . }}加入课题组{{ else }}Joined the lab in {{ . }}{{ end }}</p>{{ end }}<nav class="profile-links" aria-label="{{ $person.name.display }} links"><a href="{{ $profileURL }}" aria-label="{{ if $zh }}个人主页{{ else }}Profile{{ end }}" title="{{ if $zh }}个人主页{{ else }}Profile{{ end }}">{{ partial "lab/profile-icon.html" "profile" }}</a>{{ range $person.links }}<a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }} aria-label="{{ .label }}" title="{{ .label }}">{{ partial "lab/profile-icon.html" .icon }}</a>{{ end }}</nav></div>
+            <div class="member-card-body"><a class="member-name" href="{{ $profileURL }}"><strong>{{ $person.name.display }}</strong></a>{{ with $person.enrollment }}<p class="member-joined">{{ if $zh }}{{ . }}加入课题组{{ else }}Joined the lab in {{ . }}{{ end }}</p>{{ end }}{{ with $person.interests }}<ul class="member-interests">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}<nav class="profile-links" aria-label="{{ $person.name.display }} links"><a href="{{ $profileURL }}" aria-label="{{ if $zh }}个人主页{{ else }}Profile{{ end }}" title="{{ if $zh }}个人主页{{ else }}Profile{{ end }}">{{ partial "lab/profile-icon.html" "profile" }}</a>{{ range $person.links }}<a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }} aria-label="{{ .label }}" title="{{ .label }}">{{ partial "lab/profile-icon.html" .icon }}</a>{{ end }}</nav></div>
           </article>
           {{ end }}
         </div></section>
         {{ end }}{{ end }}
-        {{ with hugo.Data.visitors }}
+        {{ $visitorsData := hugo.Data.visitors }}{{ if $zh }}{{ $visitorsData = hugo.Data.zh.visitors }}{{ end }}
+        {{ with $visitorsData }}
         <section class="team-group"><header class="team-group-header"><h3>{{ .title }}</h3></header><ul class="visitor-list">
           {{ range .members }}<li><strong class="visitor-name">{{ .name }}</strong><span class="visitor-meta"><span class="visitor-aff">{{ .affiliation }}</span><span class="visitor-period">{{ .period }}</span></span></li>{{ end }}
         </ul></section>
@@ -245,7 +246,7 @@
     <section id="publications" class="section section-publications">
       <div class="shell">
         {{ $bibliography := index hugo.Data "zhonghai-lu-publications" }}
-        <header class="section-header reveal"><div><p class="section-index">Publications</p><h2>{{ if $zh }}论文成果{{ else }}Publications{{ end }}</h2></div><div><p>{{ if $zh }}{{ $bibliography.count }} 条论文记录，来自 DBLP 及经核实的近期补充。点击标题访问永久页面。{{ end }}</p><a class="text-link" href="{{ $bibliography.source_url }}" target="_blank" rel="noopener">{{ if $zh }}在 DBLP 查看{{ else }}View on DBLP{{ end }} →</a></div></header>
+        <header class="section-header reveal"><div><p class="section-index">Publications</p><h2>{{ if $zh }}论文成果{{ else }}Publications{{ end }}</h2></div><div><a class="text-link" href="{{ $bibliography.source_url }}" target="_blank" rel="noopener">{{ if $zh }}在 DBLP 查看{{ else }}View on DBLP{{ end }} →</a></div></header>
         <div class="publication-years">
           {{ range $index, $group := $bibliography.years }}
             <details class="publication-year"{{ if eq $index 0 }} open{{ end }}>
@@ -264,7 +265,7 @@
         </div>
         <section class="recognized-papers reveal" aria-labelledby="recognized-papers-title">
           <p class="section-index">Well-Recognized Papers</p>
-          <h3 id="recognized-papers-title">{{ if $zh }}广受认可的论文{{ else }}Well-Recognized Papers{{ end }}</h3>
+          <h3 id="recognized-papers-title">{{ if $zh }}重点论文成果{{ else }}Well-Recognized Papers{{ end }}</h3>
           <ol class="recognized-paper-list">
             {{ range sort $bibliography.publications "year" "desc" }}{{ if .award }}
             <li>

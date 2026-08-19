@@ -9,12 +9,19 @@ role: PhD Student
 enrollment: Fall 2024
 avatar: /images/team/member-03.jpg
 education:
-  - year: '2021'
-    detail: B.Sc. in Electronic Science and Technology, Beijing Institute of Technology
-  - year: '2024'
-    detail: M.Sc. in Electrical Engineering, KTH Royal Institute of Technology
+- year: '2021'
+  detail: B.Sc. in Electronic Science and Technology, Beijing Institute of Technology
+- year: '2024'
+  detail: M.Sc. in Electrical Engineering, KTH Royal Institute of Technology
 affiliations:
-  - name: Thrust of Microelectronics, HKUST(GZ)
+- name: Thrust of Microelectronics, HKUST(GZ)
 links:
-  - {icon: at-symbol, url: 'mailto:cguo758@connect.hkust-gz.edu.cn', label: Email Chao Guo}
-  - {icon: scholar, url: 'https://scholar.google.com/citations?user=TTGj0T0AAAAJ&hl=en', label: Google Scholar}
+- icon: at-symbol
+  url: mailto:cguo758@connect.hkust-gz.edu.cn
+  label: Email Chao Guo
+- icon: scholar
+  url: https://scholar.google.com/citations?user=TTGj0T0AAAAJ&hl=en
+  label: Google Scholar
+interests:
+- Prognostics and Health Management (PHM)
+- Time Series Prediction

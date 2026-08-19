@@ -9,16 +9,23 @@ role: PhD Student
 enrollment: Fall 2026
 avatar: /images/team/ruichi-han.jpg
 education:
-  - year: '2024'
-    detail: B.E. in Electronic Information Engineering, Zhejiang University
-  - year: Current
-    detail: M.S. studies in Electronics and Embedded Systems, KTH Royal Institute of Technology
+- year: '2024'
+  detail: B.E. in Electronic Information Engineering, Zhejiang University
+- year: Current
+  detail: M.S. studies in Electronics and Embedded Systems, KTH Royal Institute of
+    Technology
 affiliations:
-  - name: Thrust of Microelectronics, HKUST(GZ)
+- name: Thrust of Microelectronics, HKUST(GZ)
 links:
-  - {icon: at-symbol, url: 'mailto:rhan@connect.hkust-gz.edu.cn', label: Email Ruichi Han}
+- icon: at-symbol
+  url: mailto:rhan@connect.hkust-gz.edu.cn
+  label: Email Ruichi Han
 achievements:
-  - title: '1-bit Count-based Sorting Unit to Reduce Link Power in DNN Accelerators'
-    year: 2025
-    venue: IEEE
-    url: https://ieeexplore.ieee.org/document/11527533
+- title: 1-bit Count-based Sorting Unit to Reduce Link Power in DNN Accelerators
+  year: 2025
+  venue: IEEE
+  url: https://ieeexplore.ieee.org/document/11527533
+interests:
+- hardware accelerators for ML
+- computer architecture
+- network-on-chip

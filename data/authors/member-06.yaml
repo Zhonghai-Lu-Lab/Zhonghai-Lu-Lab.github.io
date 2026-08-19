@@ -9,11 +9,19 @@ role: PhD Student
 enrollment: Fall 2025
 avatar: /images/team/member-06.jpg
 education:
-  - year: '2021'
-    detail: B.Eng. in Microelectronic Science and Engineering, Sun Yat-sen University
-  - year: '2023'
-    detail: M.Sc. in Electrical Engineering, Delft University of Technology
+- year: '2021'
+  detail: B.Eng. in Microelectronic Science and Engineering, Sun Yat-sen University
+- year: '2023'
+  detail: M.Sc. in Electrical Engineering, Delft University of Technology
 affiliations:
-  - name: Thrust of Microelectronics, HKUST(GZ)
+- name: Thrust of Microelectronics, HKUST(GZ)
 links:
-  - {icon: at-symbol, url: 'mailto:jlin277@connect.hkust-gz.edu.cn', label: Email Jinhuang Lin}
+- icon: at-symbol
+  url: mailto:jlin277@connect.hkust-gz.edu.cn
+  label: Email Jinhuang Lin
+interests:
+- Neuromorphic Chip
+- Network on Chip
+- VLSI design
+- Computer Architecture
+- AI Hardware Accelerator

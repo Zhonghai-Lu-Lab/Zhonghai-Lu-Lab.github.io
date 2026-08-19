@@ -1,0 +1,28 @@
+schema: hugoblox/author/v1
+slug: xiaotian-jiang
+weight: 90
+name:
+  display: Xiaotian Jiang
+  given: Xiaotian
+  family: Jiang
+role: PhD Student
+enrollment: Fall 2026
+avatar: /images/team/xiaotian-jiang.jpg
+interests:
+  - Computer Architecture
+  - Network On-Chip
+  - AI Accelerator
+education:
+  - year: '2024'
+    detail: B.E. in Computer Science and Technology, Northwestern Polytechnical University
+  - year: '2026'
+    detail: M.Sc. in Embedded Systems, KTH Royal Institute of Technology
+affiliations:
+  - name: Thrust of Microelectronics, HKUST(GZ)
+links:
+  - icon: at-symbol
+    url: mailto:xjiang@connect.hkust-gz.edu.cn
+    label: Email Xiaotian Jiang
+  - icon: github
+    url: https://github.com/seven7jxt
+    label: GitHub
