@@ -115,6 +115,24 @@
     </section>
     {{ end }}
 
+    {{ with $person.experience }}
+    <section class="profile-section profile-experience">
+      <h2>{{ if $zh }}工作经历{{ else }}Working Experience{{ end }}</h2>
+      <ol>
+        {{ range . }}<li><time>{{ .year }}</time><p>{{ .detail }}</p></li>{{ end }}
+      </ol>
+    </section>
+    {{ end }}
+
+    {{ with $person.interests }}
+    <section class="profile-section profile-interests">
+      <h2>{{ if $zh }}研究方向{{ else }}Research Interests{{ end }}</h2>
+      <ul class="profile-interests-list">
+        {{ range . }}<li>{{ . }}</li>{{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
     {{ with $person.achievements }}
     <section class="profile-section">
       <h2>{{ if $zh }}代表性成果{{ else }}Representative publications{{ end }}</h2>

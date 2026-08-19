@@ -22,6 +22,9 @@ links:
 - icon: scholar
   url: https://scholar.google.com/citations?user=TTGj0T0AAAAJ&hl=en
   label: Google Scholar
+- icon: github
+  url: https://github.com/qisan3
+  label: GitHub
 interests:
 - Prognostics and Health Management (PHM)
 - Time Series Prediction

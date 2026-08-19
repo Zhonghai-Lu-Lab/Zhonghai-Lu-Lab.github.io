@@ -495,10 +495,12 @@ a:hover .inline-link span { transform: translateX(5px); }
 .profile-achievements a { color: var(--ink); text-decoration: none; font-family: Inter,"Helvetica Neue",Arial,sans-serif; font-size: 16px; line-height: 1.45; }
 .profile-achievements a:hover { color: var(--gold); }
 .profile-achievement-meta { color: var(--muted); font-size: 13px; margin-left: 6px; }
-.profile-education ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.profile-education li { display: grid; grid-template-columns: 150px 1fr; gap: 30px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--line); }
-.profile-education time { color: var(--teal); font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; }
-.profile-education li p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.6; }
+.profile-education ol, .profile-experience ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.profile-education li, .profile-experience li { display: grid; grid-template-columns: 150px 1fr; gap: 30px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.profile-education time, .profile-experience time { color: var(--teal); font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.profile-education li p, .profile-experience li p { margin: 0; color: var(--ink); font-size: 15px; line-height: 1.6; }
+.profile-interests-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 9px; }
+.profile-interests-list li { padding: 8px 14px; border: 1px solid var(--line); color: var(--teal); font-size: 13px; border-radius: 999px; }
 .profile-links-large svg { width: 19px; height: 19px; }
 .profile-section { padding: 58px 0; border-top: 1px solid var(--line); }
 .profile-section h2 { margin: 0 0 28px; font-family: Georgia,serif; font-size: 34px; font-weight: 500; }

@@ -6,7 +6,7 @@ role: 博士研究生
 enrollment: 2025 秋季
 education:
 - year: '2022'
-  detail: 获得复旦大学学士学位
+  detail: 获得复旦大学通信工程工学学士学位
 affiliations:
 - name: 香港科技大学（广州）功能枢纽微电子学域
 interests:
@@ -14,3 +14,6 @@ interests:
 - on-chip and inter-chiplet interconnects
 - operating systems
 - system-level resource scheduling for heterogeneous chiplet systems
+experience:
+- year: 2022-2025
+  detail: 蔚来汽车自动驾驶芯片部门高级工程师

@@ -19,6 +19,9 @@ links:
 - icon: at-symbol
   url: mailto:jlin277@connect.hkust-gz.edu.cn
   label: Email Jinhuang Lin
+- icon: github
+  url: https://github.com/BlackJackJam
+  label: GitHub
 interests:
 - Neuromorphic Chip
 - Network on Chip

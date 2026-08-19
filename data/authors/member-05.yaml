@@ -19,6 +19,9 @@ links:
 - icon: at-symbol
   url: mailto:yxiong791@connect.hkust-gz.edu.cn
   label: Email Yizhe Xiong
+- icon: github
+  url: https://github.com/ETHANXIONG81
+  label: GitHub
 interests:
 - Circuit resilience on network-on-chip, chiplet
 - Dependable and fault-tolerant computing

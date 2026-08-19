@@ -10,7 +10,7 @@ enrollment: Fall 2025
 avatar: /images/team/chen-yang.jpg
 education:
 - year: '2022'
-  detail: Bachelor's degree, Fudan University
+  detail: B.Eng. in Communication Engineering, Fudan University
 affiliations:
 - name: Thrust of Microelectronics, HKUST(GZ)
 links:
@@ -28,3 +28,6 @@ interests:
 - on-chip and inter-chiplet interconnects
 - operating systems
 - system-level resource scheduling for heterogeneous chiplet systems
+experience:
+- year: 2022-2025
+  detail: Senior Engineer in the Autonomous Driving Chip Department at NIO

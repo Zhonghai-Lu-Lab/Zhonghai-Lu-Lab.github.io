@@ -6,8 +6,8 @@
   <meta name="description" content="{{ .Params.summary | default .Site.Params.hugoblox.identity.description }}">
   <meta name="theme-color" content="#082e3a">
   <title>{{ .Title }} · {{ .Site.Title }}</title>
-  <link rel="stylesheet" href="{{ "css/lab.css" | relURL }}?v=20260818-4">
-  <script defer src="{{ "js/lab.js" | relURL }}?v=20260818-4"></script>
+  <link rel="stylesheet" href="{{ "css/lab.css" | relURL }}?v=20260818-5">
+  <script defer src="{{ "js/lab.js" | relURL }}?v=20260818-5"></script>
 </head>
 <body>
   {{ $zh := eq .Site.Language.Lang "zh" }}
@@ -229,7 +229,7 @@
           {{ range . }}{{ $person := partial "lab/person.html" (dict "slug" .slug "lang" $.Site.Language.Lang) }}{{ $profileURL := printf "authors/%s/" .slug | relLangURL }}
           <article class="member-card reveal">
             <a class="member-avatar" href="{{ $profileURL }}" aria-label="{{ $person.name.display }}">{{ with $person.avatar }}<img src="{{ . | relURL }}" alt="{{ $person.name.display }}">{{ else }}<span>{{ substr $person.name.display 0 1 }}</span>{{ end }}</a>
-            <div class="member-card-body"><a class="member-name" href="{{ $profileURL }}"><strong>{{ $person.name.display }}</strong></a>{{ with $person.enrollment }}<p class="member-joined">{{ if $zh }}{{ . }}加入课题组{{ else }}Joined the lab in {{ . }}{{ end }}</p>{{ end }}{{ with $person.interests }}<ul class="member-interests">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}<nav class="profile-links" aria-label="{{ $person.name.display }} links"><a href="{{ $profileURL }}" aria-label="{{ if $zh }}个人主页{{ else }}Profile{{ end }}" title="{{ if $zh }}个人主页{{ else }}Profile{{ end }}">{{ partial "lab/profile-icon.html" "profile" }}</a>{{ range $person.links }}<a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }} aria-label="{{ .label }}" title="{{ .label }}">{{ partial "lab/profile-icon.html" .icon }}</a>{{ end }}</nav></div>
+            <div class="member-card-body"><a class="member-name" href="{{ $profileURL }}"><strong>{{ $person.name.display }}</strong></a>{{ with $person.enrollment }}<p class="member-joined">{{ if $zh }}{{ . }}加入课题组{{ else }}Joined the lab in {{ . }}{{ end }}</p>{{ end }}<nav class="profile-links" aria-label="{{ $person.name.display }} links"><a href="{{ $profileURL }}" aria-label="{{ if $zh }}个人主页{{ else }}Profile{{ end }}" title="{{ if $zh }}个人主页{{ else }}Profile{{ end }}">{{ partial "lab/profile-icon.html" "profile" }}</a>{{ range $person.links }}<a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }} aria-label="{{ .label }}" title="{{ .label }}">{{ partial "lab/profile-icon.html" .icon }}</a>{{ end }}</nav></div>
           </article>
           {{ end }}
         </div></section>

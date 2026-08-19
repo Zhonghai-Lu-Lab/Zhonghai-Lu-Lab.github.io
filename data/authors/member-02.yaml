@@ -19,6 +19,9 @@ links:
 - icon: at-symbol
   url: mailto:jli739@connect.hkust-gz.edu.cn
   label: Email Jingwei Li
+- icon: github
+  url: https://github.com/NinjaVVV
+  label: GitHub
 interests:
 - Computer architecture
 - Chiplet
