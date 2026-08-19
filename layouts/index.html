@@ -6,8 +6,8 @@
   <meta name="description" content="{{ .Params.summary | default .Site.Params.hugoblox.identity.description }}">
   <meta name="theme-color" content="#082e3a">
   <title>{{ .Title }} · {{ .Site.Title }}</title>
-  <link rel="stylesheet" href="{{ "css/lab.css" | relURL }}?v=20260818-5">
-  <script defer src="{{ "js/lab.js" | relURL }}?v=20260818-5"></script>
+  <link rel="stylesheet" href="{{ "css/lab.css" | relURL }}?v=20260818-6">
+  <script defer src="{{ "js/lab.js" | relURL }}?v=20260818-6"></script>
 </head>
 <body>
   {{ $zh := eq .Site.Language.Lang "zh" }}
@@ -200,11 +200,11 @@
         <header class="section-header reveal"><div><p class="section-index">Projects</p><h2>{{ if $zh }}研究项目{{ else }}Ongoing projects{{ end }}</h2></div></header>
         <div class="project-grid">
           {{ range (where .Site.RegularPages "Section" "projects").ByWeight }}
-          <article class="project-card reveal">
-            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <a class="project-card reveal" href="{{ .RelPermalink }}">
+            <h3>{{ .Title }}</h3>
             {{ with .Params.funded_by }}<div class="project-funded"><img src="/images/nsfc-logo.png" alt="NSFC"><span>Funded by NSFC</span></div>{{ end }}
             {{ with .Params.duration }}<div class="project-duration">{{ . }}</div>{{ end }}
-          </article>
+          </a>
           {{ end }}
         </div>
       </div>
