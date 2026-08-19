@@ -8,7 +8,6 @@
     <h1>{{ .Title }}</h1>
   </header>
   <section class="project-information" aria-labelledby="project-information-title">
-    <p class="section-index">Project Information</p>
     <h2 id="project-information-title">{{ if $zh }}项目信息{{ else }}Project Information{{ end }}</h2>
     <dl>
       {{ with .Params.status }}<div><dt>{{ if $zh }}项目状态{{ else }}Status{{ end }}</dt><dd>{{ if and $zh (eq . "Active") }}在研{{ else }}{{ . }}{{ end }}</dd></div>{{ end }}
@@ -19,7 +18,6 @@
     </dl>
   </section>
   <section class="project-abstract" aria-labelledby="project-abstract-title">
-    <p class="section-index">Abstract</p>
     <h2 id="project-abstract-title">{{ if $zh }}项目摘要{{ else }}Abstract{{ end }}</h2>
     <div>{{ .Params.abstract | markdownify }}</div>
   </section>
