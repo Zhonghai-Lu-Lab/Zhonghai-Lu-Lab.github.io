@@ -83,6 +83,7 @@
   </article>
 {{ else }}
   <article class="profile-shell">
+    <a class="article-back" href="{{ .Site.Home.RelPermalink }}#team">← {{ if $zh }}返回首页{{ else }}Back to homepage{{ end }}</a>
     <div class="profile-hero"><div class="profile-visual">{{ with $person.avatar }}<img src="{{ . | relURL }}" alt="{{ $person.name.display }}">{{ else }}<div class="profile-monogram">{{ substr $person.name.display 0 1 }}</div>{{ end }}</div><div class="profile-intro"><h1>{{ $person.name.display }}</h1>{{ with $person.name.chinese }}<p class="faculty-chinese-name">{{ . }}</p>{{ end }}<p class="profile-cohort">{{ $person.role }}{{ with $person.enrollment }} · {{ if $zh }}{{ . }}加入课题组{{ else }}Joined the lab in {{ . }}{{ end }}{{ end }}</p>{{ range $person.affiliations }}<p class="profile-affiliation">{{ .name }}</p>{{ end }}{{ with $person.links }}<nav class="profile-links profile-links-large">{{ range . }}<a href="{{ .url }}"{{ if hasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }} aria-label="{{ .label }}" title="{{ .label }}">{{ partial "lab/profile-icon.html" .icon }}</a>{{ end }}</nav>{{ end }}</div></div>
 
     {{ with $person.education }}

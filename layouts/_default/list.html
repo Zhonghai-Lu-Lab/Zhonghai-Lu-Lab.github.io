@@ -1,3 +1,6 @@
 {{ define "main" }}
-<div class="listing-shell listing-section-{{ .Section }}"><header class="listing-header"><p class="section-index">Zhonghai Lu’s Lab</p><h1>{{ .Title }}</h1>{{ with .Content }}<div>{{ . }}</div>{{ end }}</header><div class="listing-grid">{{ range .RegularPages.ByDate.Reverse }}<a class="listing-card" href="{{ .RelPermalink }}"><span>{{ with .Date }}{{ .Format "2006.01.02" }}{{ end }}</span><h2>{{ .Title }}</h2><p>{{ .Params.summary | default .Summary }}</p></a>{{ end }}</div></div>
+{{ $zh := eq .Site.Language.Lang "zh" }}
+{{ $anchor := printf "#%s" .Section }}
+{{ if eq .Section "authors" }}{{ $anchor = "#team" }}{{ else if eq .Section "opportunities" }}{{ $anchor = "#join-us" }}{{ else if eq .Section "events" }}{{ $anchor = "#hero" }}{{ end }}
+<div class="listing-shell listing-section-{{ .Section }}"><a class="article-back" href="{{ .Site.Home.RelPermalink }}{{ $anchor }}">← {{ if $zh }}返回首页{{ else }}Back to homepage{{ end }}</a><header class="listing-header"><p class="section-index">Zhonghai Lu’s Lab</p><h1>{{ .Title }}</h1>{{ with .Content }}<div>{{ . }}</div>{{ end }}</header><div class="listing-grid">{{ range .RegularPages.ByDate.Reverse }}<a class="listing-card" href="{{ .RelPermalink }}"><span>{{ with .Date }}{{ .Format "2006.01.02" }}{{ end }}</span><h2>{{ .Title }}</h2><p>{{ .Params.summary | default .Summary }}</p></a>{{ end }}</div></div>
 {{ end }}
