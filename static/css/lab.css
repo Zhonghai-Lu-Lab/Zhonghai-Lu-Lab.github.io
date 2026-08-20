@@ -25,6 +25,7 @@ button { font: inherit; }
 .site-header.is-scrolled { background: rgba(247,247,243,.94); color: var(--ink); box-shadow: 0 1px 0 var(--line); backdrop-filter: blur(14px); }
 .nav-shell { width: min(1400px, calc(100vw - 52px)); height: 96px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 34px; }
 .brand { display: inline-flex; align-items: center; gap: 16px; min-width: 286px; }
+.brand-logo { height: 46px; width: auto; display: block; }
 .brand-mark { width: 44px; height: 44px; position: relative; display: grid; grid-template-columns: repeat(3,1fr); gap: 4px; transform: rotate(45deg); }
 .brand-mark i { display: block; border: 1px solid currentColor; background: rgba(39,165,180,.2); }
 .brand-mark i:nth-child(2) { transform: translateY(5px); background: var(--gold); border-color: var(--gold); }
@@ -415,7 +416,7 @@ a:hover .inline-link span { transform: translateX(5px); }
 }
 @media (max-width: 500px) {
   :root { --shell: calc(100% - 24px); }
-  .brand { min-width: 0; }.brand-copy strong { font-size: 17px; }.brand-copy small { display: none; }.brand-mark { width: 32px; height: 32px; }
+  .brand { min-width: 0; }.brand-copy strong { font-size: 17px; }.brand-copy small { display: none; }.brand-mark { width: 32px; height: 32px; }.brand-logo { height: 34px; }
   .hero { min-height: 620px; }.hero-inner { align-items: flex-end; padding-bottom: 150px; }.hero-copy { width: 100%; }.hero h1 { font-size: 44px; }.button { margin-top: 22px; }
   .hero-chip-animation { inset: 5% -48% 11%; opacity: .68; }
   .hero-air-meanings { top: 71%; gap: 7px; font-size: 10px; letter-spacing: .025em; }
