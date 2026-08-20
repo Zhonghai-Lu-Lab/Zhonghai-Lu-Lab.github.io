@@ -1,5 +1,6 @@
 ---
 cms_managed: true
+list_on_homepage: false
 title: Another publication record ready for BibTeX or manual entry
 authors: [zhonghai-lu, member-03]
 date: 2026-03-18

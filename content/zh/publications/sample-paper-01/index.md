@@ -1,5 +1,6 @@
 ---
 cms_managed: true
+list_on_homepage: false
 title: 示例论文标题——请替换为核实后的元数据
 authors: [zhonghai-lu, member-02]
 date: 2026-05-20

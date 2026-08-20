@@ -1,4 +1,5 @@
 ---
+cms_managed: true
 title: 学术报告
 date: 2026-08-05
 kicker: 由 IEEE EDA 广州分会主办

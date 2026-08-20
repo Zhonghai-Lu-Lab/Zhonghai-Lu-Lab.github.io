@@ -1,4 +1,5 @@
 ---
+cms_managed: true
 title: "港科广微电子获 IEEE 可靠性学会 2024 年度最佳会议论文奖"
 date: 2026-07-22
 category: "获奖"

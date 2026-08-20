@@ -1,5 +1,6 @@
 ---
 cms_managed: true
+list_on_homepage: false
 title: Placeholder publication 04 — replace with verified metadata
 authors: [zhonghai-lu]
 date: 2026-01-16

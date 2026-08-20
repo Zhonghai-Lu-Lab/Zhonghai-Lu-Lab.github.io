@@ -45,9 +45,9 @@
         {{ range $index, $event := $events }}
         {{ $hero := $event.Params.hero }}
         {{ with $event.Resources.GetMatch $hero }}{{ $hero = .RelPermalink }}{{ end }}
-        <article class="hero-slide{{ if eq $index 0 }} is-active is-circuit{{ end }}{{ if eq $event.Params.hero_mode "poster" }} is-poster{{ end }}{{ if eq $event.Params.hero_mode "split" }} is-split{{ end }}" data-slide="{{ $index }}"{{ if ne $event.Params.hero_mode "split" }} style="--slide-image: url('{{ $hero }}'){{ with $event.Params.hero_position }}; --hero-position: {{ . }}{{ end }}"{{ end }} aria-hidden="{{ if eq $index 0 }}false{{ else }}true{{ end }}">
+        <article class="hero-slide{{ if eq $index 0 }} is-active{{ end }}{{ if eq $event.Params.hero_mode "circuit" }} is-circuit{{ end }}{{ if eq $event.Params.hero_mode "poster" }} is-poster{{ end }}{{ if eq $event.Params.hero_mode "split" }} is-split{{ end }}" data-slide="{{ $index }}"{{ if ne $event.Params.hero_mode "split" }} style="--slide-image: url('{{ $hero }}'){{ with $event.Params.hero_position }}; --hero-position: {{ . }}{{ end }}"{{ end }} aria-hidden="{{ if eq $index 0 }}false{{ else }}true{{ end }}">
           <div class="hero-image" role="img" aria-label="{{ $event.Params.hero_alt }}"></div>
-          {{ if eq $index 0 }}
+          {{ if eq $event.Params.hero_mode "circuit" }}
           <div class="hero-chip-animation" aria-hidden="true">
             <div class="hero-chip-plane">
             <svg viewBox="0 0 880 680" focusable="false">
@@ -245,17 +245,39 @@
     <section id="publications" class="section section-publications">
       <div class="shell">
         {{ $bibliography := index hugo.Data "zhonghai-lu-publications" }}
+        {{ $cmsPublications := where (where .Site.RegularPages "Section" "publications") "Params.list_on_homepage" true }}
+        {{ $publicationYears := slice }}
+        {{ range $bibliography.years }}{{ $publicationYears = $publicationYears | append (int .year) }}{{ end }}
+        {{ range $cmsPublications }}{{ $year := int .Params.year }}{{ if not (in $publicationYears $year) }}{{ $publicationYears = $publicationYears | append $year }}{{ end }}{{ end }}
+        {{ $publicationYears = sort $publicationYears "value" "desc" }}
         <header class="section-header reveal"><div><h2>{{ if $zh }}论文成果{{ else }}Publications{{ end }}</h2></div><div><a class="text-link" href="{{ $bibliography.source_url }}" target="_blank" rel="noopener">{{ if $zh }}在 DBLP 查看{{ else }}View on DBLP{{ end }} →</a></div></header>
         <div class="publication-years">
-          {{ range $index, $group := $bibliography.years }}
+          {{ range $index, $year := $publicationYears }}
+            {{ $dataItems := slice }}
+            {{ range $bibliography.years }}{{ if eq (int .year) $year }}{{ $dataItems = .items }}{{ end }}{{ end }}
+            {{ $cmsItems := where $cmsPublications "Params.year" $year }}
+            {{ $newCmsItems := slice }}
+            {{ range $cmsItems.ByDate.Reverse }}
+              {{ $cmsPaper := . }}{{ $duplicate := false }}
+              {{ range $dataItems }}{{ if eq (anchorize .title) (anchorize $cmsPaper.Title) }}{{ $duplicate = true }}{{ end }}{{ end }}
+              {{ if not $duplicate }}{{ $newCmsItems = $newCmsItems | append $cmsPaper }}{{ end }}
+            {{ end }}
+            {{ $paperCount := add (len $dataItems) (len $newCmsItems) }}
             <details class="publication-year"{{ if eq $index 0 }} open{{ end }}>
-              <summary><strong>{{ $group.year }}</strong><span>{{ $group.count }} {{ if $zh }}篇{{ else }}{{ if eq (len $group.items) 1 }}paper{{ else }}papers{{ end }}{{ end }}</span></summary>
+              <summary><strong>{{ $year }}</strong><span>{{ $paperCount }} {{ if $zh }}篇{{ else }}{{ if eq $paperCount 1 }}paper{{ else }}papers{{ end }}{{ end }}</span></summary>
               <ol>
-                {{ range $group.items }}
+                {{ range $dataItems }}
                   <li>
                     <h3>{{ if .link }}<a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3>
                     <p>{{ delimit .authors ", " }}</p>
                     <span>{{ .venue }}{{ with .pages }} · {{ . }}{{ end }}</span>
+                  </li>
+                {{ end }}
+                {{ range $newCmsItems }}
+                  <li>
+                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <p>{{ .Params.authors }}</p>
+                    <span>{{ .Params.venue }}{{ with .Params.doi }} · <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}</span>
                   </li>
                 {{ end }}
               </ol>

@@ -1,4 +1,6 @@
 ---
+cms_managed: true
+list_on_homepage: true
 title: Long-Term Health Prediction for Power Diodes Using Non-Uniform Kalman Filter
 date: 2026-08-03T00:00:00.000+08:00
 authors: Chao Guo and Zhonghai Lu

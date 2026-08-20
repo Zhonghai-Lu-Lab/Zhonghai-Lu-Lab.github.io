@@ -1,4 +1,5 @@
 ---
+cms_managed: true
 title: RESEARCH SEMINAR
 date: 2026-08-05
 kicker: Organized by IEEE Council on EDA, Guangzhou

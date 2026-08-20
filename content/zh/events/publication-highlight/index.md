@@ -1,4 +1,5 @@
 ---
+cms_managed: true
 title: 2024 IEEE 可靠性学会最佳会议论文奖
 date: 2026-07-22
 kicker: 团队成就

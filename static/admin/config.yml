@@ -13,12 +13,15 @@ public_folder: /images/uploads
 collections:
   - name: news_en
     label: News (English)
+    description: "Save creates a draft only. To update the production website, click Publish and wait for the GitHub merge and Cloudflare deployment to complete. The publication date must be today or earlier."
     folder: content/en/news
     create: true
+    filter: {field: cms_managed, value: true}
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
+      - {label: CMS managed, name: cms_managed, widget: hidden, default: true}
       - {label: Title, name: title, widget: string}
-      - {label: Date, name: date, widget: datetime, time_format: false}
+      - {label: Publication date, name: date, widget: datetime, time_format: false, hint: "Must be today or earlier. Hugo does not publish future-dated content."}
       - {label: Category, name: category, widget: string}
       - {label: Summary, name: summary, widget: text, required: false}
       - {label: Featured image, name: image, widget: image, required: false, hint: "Upload the main image shown on the homepage and article page"}
@@ -26,12 +29,15 @@ collections:
       - {label: Body, name: body, widget: markdown, required: false}
   - name: news_zh
     label: 新闻（中文）
+    description: "保存只会创建草稿。要更新正式网站，必须点击 Publish，并等待 GitHub 合并及 Cloudflare 部署完成。发布日期不得晚于今天。"
     folder: content/zh/news
     create: true
+    filter: {field: cms_managed, value: true}
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
+      - {label: CMS 管理标记, name: cms_managed, widget: hidden, default: true}
       - {label: 标题, name: title, widget: string}
-      - {label: 日期, name: date, widget: datetime, time_format: false}
+      - {label: 发布日期, name: date, widget: datetime, time_format: false, hint: "不得晚于今天；Hugo 不会生成未来日期的内容。"}
       - {label: 分类, name: category, widget: string}
       - {label: 摘要, name: summary, widget: text, required: false}
       - {label: 封面图片, name: image, widget: image, required: false, hint: "上传显示在首页和新闻详情页的主图"}
@@ -39,16 +45,29 @@ collections:
       - {label: 正文, name: body, widget: markdown, required: false}
   - name: events_en
     label: Carousel Events (English)
+    description: "Save creates a draft only. Click Publish and wait for the GitHub merge and Cloudflare deployment. Show in carousel controls visibility; lower Order values appear earlier. Order 1 is reserved for the AIR circuit animation."
     folder: content/en/events
     create: true
+    filter: {field: cms_managed, value: true}
     path: '{{slug}}/index'
     fields:
+      - {label: CMS managed, name: cms_managed, widget: hidden, default: true}
       - {label: Title, name: title, widget: string}
-      - {label: Date, name: date, widget: datetime, time_format: false}
+      - {label: Publication date, name: date, widget: datetime, time_format: false, hint: "Must be today or earlier. Hugo does not publish future-dated slides."}
       - {label: Kicker, name: kicker, widget: string}
       - {label: Summary, name: summary, widget: text, required: false}
       - {label: Hero image, name: hero, widget: image}
       - {label: Image alt text, name: hero_alt, widget: string}
+      - {label: Presentation style, name: hero_mode, widget: select, required: false, default: standard, options: [{label: Standard image, value: standard}, {label: Poster, value: poster}, {label: Split image and text, value: split}, {label: AIR circuit animation, value: circuit}], hint: "Use AIR circuit animation only for the permanent AIR Lab opening slide."}
+      - {label: Image position, name: hero_position, widget: string, required: false, hint: "Optional CSS position such as top, center, or 50% 30%."}
+      - label: Event details
+        name: details
+        widget: list
+        required: false
+        hint: "Optional structured details such as speaker, time, venue, and host."
+        fields:
+          - {label: Label, name: label, widget: string}
+          - {label: Value, name: value, widget: string}
       - {label: Button text, name: button, widget: string, required: false, hint: "Use for a single button; leave empty when using Additional buttons"}
       - {label: Button target, name: target, widget: string, required: false, pattern: ['^(#|/|https?://)', 'Use #anchor, /path/, or a full http(s) URL'], hint: "Use a section anchor such as #news or a verified page path such as /publications/paper-slug/"}
       - label: Additional buttons
@@ -59,21 +78,34 @@ collections:
         fields:
           - {label: Button text, name: label, widget: string}
           - {label: Button target, name: url, widget: string, pattern: ['^(#|/|https?://)', 'Use #anchor, /path/, or a full http(s) URL']}
-      - {label: Show in carousel, name: featured, widget: boolean, default: true}
-      - {label: Order, name: weight, widget: number, default: 10}
+      - {label: Show in carousel, name: featured, widget: boolean, default: true, hint: "Turn off to remove this item from the homepage carousel without deleting it."}
+      - {label: Order, name: weight, widget: number, default: 10, min: 1, value_type: int, hint: "Lower numbers appear earlier. Keep 1 for the permanent AIR Lab opening slide; use 2 or greater for new slides."}
       - {label: Body, name: body, widget: markdown, required: false}
   - name: events_zh
     label: 轮播事件（中文）
+    description: "保存只会创建草稿。必须点击 Publish，并等待 GitHub 合并及 Cloudflare 部署完成。进入轮播控制上下架；顺序数字越小越靠前，1 保留给 AIR 芯片动画。"
     folder: content/zh/events
     create: true
+    filter: {field: cms_managed, value: true}
     path: '{{slug}}/index'
     fields:
+      - {label: CMS 管理标记, name: cms_managed, widget: hidden, default: true}
       - {label: 标题, name: title, widget: string}
-      - {label: 日期, name: date, widget: datetime, time_format: false}
+      - {label: 发布日期, name: date, widget: datetime, time_format: false, hint: "不得晚于今天；Hugo 不会生成未来日期的轮播内容。"}
       - {label: 栏目短标题, name: kicker, widget: string}
       - {label: 摘要, name: summary, widget: text, required: false}
       - {label: 主图, name: hero, widget: image}
       - {label: 图片替代文本, name: hero_alt, widget: string}
+      - {label: 展示样式, name: hero_mode, widget: select, required: false, default: standard, options: [{label: 标准图片, value: standard}, {label: 海报, value: poster}, {label: 图文分栏, value: split}, {label: AIR 芯片动画, value: circuit}], hint: "AIR 芯片动画仅用于固定的 AIR 实验室开场页。"}
+      - {label: 图片位置, name: hero_position, widget: string, required: false, hint: "可选，例如 top、center 或 50% 30%。"}
+      - label: 事件详情
+        name: details
+        widget: list
+        required: false
+        hint: "可选，可填写主讲、时间、地点、主持等结构化信息。"
+        fields:
+          - {label: 标签, name: label, widget: string}
+          - {label: 内容, name: value, widget: string}
       - {label: 按钮文字, name: button, widget: string, required: false, hint: "单按钮时填写；使用多个按钮时留空"}
       - {label: 按钮目标, name: target, widget: string, required: false, pattern: ['^(#|/|https?://)', '请填写 #锚点、/站内路径/ 或完整 http(s) URL'], hint: "填写栏目锚点（如 #news）或已核实的详情页路径（如 /zh/publications/paper-slug/）"}
       - label: 多按钮
@@ -84,17 +116,21 @@ collections:
         fields:
           - {label: 按钮文字, name: label, widget: string}
           - {label: 按钮目标, name: url, widget: string, pattern: ['^(#|/|https?://)', '请填写 #锚点、/站内路径/ 或完整 http(s) URL']}
-      - {label: 进入轮播, name: featured, widget: boolean, default: true}
-      - {label: 顺序, name: weight, widget: number, default: 10}
+      - {label: 进入轮播, name: featured, widget: boolean, default: true, hint: "关闭后会从首页轮播下架，但不会删除内容。"}
+      - {label: 顺序, name: weight, widget: number, default: 10, min: 1, value_type: int, hint: "数字越小越靠前。1 保留给固定 AIR 实验室开场页，新轮播请使用 2 或更大的数字。"}
       - {label: 正文, name: body, widget: markdown, required: false}
   - name: publications_en
     label: Publications (English)
+    description: "Save creates a draft only. Click Publish and wait for the GitHub merge and Cloudflare deployment. Published CMS papers are added to the homepage publication list automatically; records already present in the DBLP list are de-duplicated by title."
     folder: content/en/publications
     create: true
+    filter: {field: cms_managed, value: true}
     path: '{{slug}}/index'
     fields:
+      - {label: CMS managed, name: cms_managed, widget: hidden, default: true}
+      - {label: Show in publication list, name: list_on_homepage, widget: hidden, default: true}
       - {label: Title, name: title, widget: string}
-      - {label: Date, name: date, widget: datetime, time_format: false}
+      - {label: Publication date, name: date, widget: datetime, time_format: false, hint: "Must be today or earlier. Hugo does not publish future-dated pages."}
       - {label: Authors, name: authors, widget: string}
       - {label: Venue, name: venue, widget: string, hint: "Journal or conference name"}
       - {label: Year, name: year, widget: number}
@@ -104,12 +140,16 @@ collections:
       - {label: Body, name: body, widget: markdown, required: false}
   - name: publications_zh
     label: 出版物（中文）
+    description: "保存只会创建草稿。必须点击 Publish，并等待 GitHub 合并及 Cloudflare 部署完成。发布后的 CMS 论文会自动加入首页论文列表；已经存在于 DBLP 列表中的论文会按标题自动去重。"
     folder: content/zh/publications
     create: true
+    filter: {field: cms_managed, value: true}
     path: '{{slug}}/index'
     fields:
+      - {label: CMS 管理标记, name: cms_managed, widget: hidden, default: true}
+      - {label: 显示在论文列表, name: list_on_homepage, widget: hidden, default: true}
       - {label: 标题, name: title, widget: string}
-      - {label: 日期, name: date, widget: datetime, time_format: false}
+      - {label: 发布日期, name: date, widget: datetime, time_format: false, hint: "不得晚于今天；Hugo 不会生成未来日期的论文详情页。"}
       - {label: 作者, name: authors, widget: string}
       - {label: 发表场所, name: venue, widget: string, hint: "期刊或会议名称"}
       - {label: 年份, name: year, widget: number}

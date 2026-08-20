@@ -1,4 +1,5 @@
 ---
+cms_managed: true
 title: "HKUST(GZ) Microelectronics Receives the 2024 IEEE Reliability Society Best Conference Paper Award"
 date: 2026-07-22
 category: "Team Achievement"

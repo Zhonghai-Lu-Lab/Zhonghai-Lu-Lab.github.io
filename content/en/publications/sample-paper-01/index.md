@@ -1,5 +1,6 @@
 ---
 cms_managed: true
+list_on_homepage: false
 title: Sample publication title — replace with verified metadata
 authors: [zhonghai-lu, member-02]
 date: 2026-05-20

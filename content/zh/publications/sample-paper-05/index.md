@@ -1,5 +1,6 @@
 ---
 cms_managed: true
+list_on_homepage: false
 title: 论文占位 05——请替换为核实后的元数据
 authors: [zhonghai-lu]
 date: 2025-12-08

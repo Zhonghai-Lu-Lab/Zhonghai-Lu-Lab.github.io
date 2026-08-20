@@ -1,4 +1,5 @@
 ---
+cms_managed: true
 title: "学术报告｜AI 数字孪生革新工业设备运维"
 date: 2026-08-05
 category: "学术活动"

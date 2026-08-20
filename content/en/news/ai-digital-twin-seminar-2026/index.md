@@ -1,4 +1,5 @@
 ---
+cms_managed: true
 title: "Research Seminar: From Predictive to Prescriptive Maintenance with AI and Digital Failure Twins"
 date: 2026-08-05
 category: "Research Event"
