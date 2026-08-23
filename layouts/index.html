@@ -19,7 +19,7 @@
   <header class="site-header" data-header>
     <div class="nav-shell">
       <a class="brand" href="{{ .Site.Home.RelPermalink }}" aria-label="{{ .Site.Title }}">
-        <img class="brand-logo" src="{{ "images/air-lab-logo.svg" | relURL }}" alt="Zhonghai Lu’s Lab">
+        <img class="brand-logo" src="{{ "images/air-lab-logo.png" | relURL }}" alt="Zhonghai Lu’s Lab">
       </a>
       <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-controls="main-nav">
         <span></span><span></span><span></span><b>{{ if $zh }}菜单{{ else }}Menu{{ end }}</b>
@@ -340,7 +340,7 @@
 
   <footer class="mega-footer">
     <div class="shell">
-      <div class="footer-brand"><a class="brand inverted" href="#hero"><img class="brand-logo" src="{{ "images/air-lab-logo.svg" | relURL }}" alt="Zhonghai Lu’s Lab"></a></div>
+      <div class="footer-brand"><a class="brand inverted" href="#hero"><img class="brand-logo" src="{{ "images/air-lab-logo.png" | relURL }}" alt="Zhonghai Lu’s Lab"></a></div>
       <div class="footer-columns">
         {{ range $footer.columns }}<div class="footer-column"><h3>{{ .title }}</h3><ul>{{ range .links }}<li><a href="{{ .url }}">{{ .label }}</a></li>{{ end }}</ul></div>{{ end }}
       </div>
