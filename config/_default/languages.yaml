@@ -5,14 +5,12 @@
 # Default language
 en:
   locale: en-us
-  contentDir: content/en
   label: English
   weight: 1
 
 # Uncomment the lines below to configure your website in a second language.
 zh:
   locale: zh-Hans
-  contentDir: content/zh
   label: 中文
   title: 鲁中海教授研究组
   weight: 2

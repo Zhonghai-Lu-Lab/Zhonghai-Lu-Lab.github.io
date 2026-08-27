@@ -11,6 +11,48 @@ imports:
 
 # Install any Hugo Blox within the `hugo-blox/blox/` folder
 mounts:
+  # Base content for each language. CMS-managed bilingual entries are mounted
+  # below into their original sections so existing public URLs do not change.
+  - source: content/en
+    target: content
+    sites:
+      matrix:
+        languages: [en]
+  - source: content/zh
+    target: content
+    sites:
+      matrix:
+        languages: [zh]
+  - source: content/cms/news/en
+    target: content/news
+    sites:
+      matrix:
+        languages: [en]
+  - source: content/cms/news/zh
+    target: content/news
+    sites:
+      matrix:
+        languages: [zh]
+  - source: content/cms/publications/en
+    target: content/publications
+    sites:
+      matrix:
+        languages: [en]
+  - source: content/cms/publications/zh
+    target: content/publications
+    sites:
+      matrix:
+        languages: [zh]
+  - source: content/cms/projects/en
+    target: content/projects
+    sites:
+      matrix:
+        languages: [en]
+  - source: content/cms/projects/zh
+    target: content/projects
+    sites:
+      matrix:
+        languages: [zh]
   - source: hugo-blox/blox/community
     target: layouts/_partials/blox/community/
     files:

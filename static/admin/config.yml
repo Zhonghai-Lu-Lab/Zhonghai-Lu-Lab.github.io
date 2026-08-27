@@ -10,39 +10,30 @@ publish_mode: editorial_workflow
 media_folder: static/images/uploads
 public_folder: /images/uploads
 
+i18n:
+  structure: multiple_folders
+  locales: [en, zh]
+  default_locale: en
+
 collections:
-  - name: news_en
-    label: News (English)
-    description: "Save creates a draft only. To update the production website, click Publish and wait for the GitHub merge and Cloudflare deployment to complete. The publication date must be today or earlier."
-    folder: content/en/news
+  - name: news
+    label: News / 新闻
+    label_singular: News entry / 新闻
+    description: "Edit the English and Chinese versions in the same entry. Save creates a draft only; click Publish and wait for GitHub and Cloudflare deployment. / 在同一条目中切换 English 与中文；保存只是草稿，必须点击 Publish。"
+    folder: content/cms/news
     create: true
+    i18n: true
     filter: {field: cms_managed, value: true}
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    path: '{{slug}}/index'
     fields:
-      - {label: CMS managed, name: cms_managed, widget: hidden, default: true}
-      - {label: Title, name: title, widget: string}
-      - {label: Publication date, name: date, widget: datetime, time_format: false, hint: "Must be today or earlier. Hugo does not publish future-dated content."}
-      - {label: Category, name: category, widget: string}
-      - {label: Summary, name: summary, widget: text, required: false}
-      - {label: Featured image, name: image, widget: image, required: false, hint: "Upload the main image shown on the homepage and article page"}
-      - {label: Image alt text, name: image_alt, widget: string, required: false, hint: "Briefly describe the image for accessibility"}
-      - {label: Body, name: body, widget: markdown, required: false}
-  - name: news_zh
-    label: 新闻（中文）
-    description: "保存只会创建草稿。要更新正式网站，必须点击 Publish，并等待 GitHub 合并及 Cloudflare 部署完成。发布日期不得晚于今天。"
-    folder: content/zh/news
-    create: true
-    filter: {field: cms_managed, value: true}
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    fields:
-      - {label: CMS 管理标记, name: cms_managed, widget: hidden, default: true}
-      - {label: 标题, name: title, widget: string}
-      - {label: 发布日期, name: date, widget: datetime, time_format: false, hint: "不得晚于今天；Hugo 不会生成未来日期的内容。"}
-      - {label: 分类, name: category, widget: string}
-      - {label: 摘要, name: summary, widget: text, required: false}
-      - {label: 封面图片, name: image, widget: image, required: false, hint: "上传显示在首页和新闻详情页的主图"}
-      - {label: 图片说明, name: image_alt, widget: string, required: false, hint: "简要描述图片内容，用于无障碍访问"}
-      - {label: 正文, name: body, widget: markdown, required: false}
+      - {label: CMS managed, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
+      - {label: Title / 标题, name: title, widget: string, i18n: true}
+      - {label: Publication date / 发布日期, name: date, widget: datetime, time_format: false, i18n: duplicate, hint: "Must be today or earlier. / 不得晚于今天。"}
+      - {label: Category / 分类, name: category, widget: string, i18n: true}
+      - {label: Summary / 摘要, name: summary, widget: text, required: false, i18n: true}
+      - {label: Featured image / 封面图片, name: image, widget: image, required: false, i18n: duplicate, hint: "One shared image for both languages. / 中英文共用一张图片。"}
+      - {label: Image alt text / 图片说明, name: image_alt, widget: string, required: false, i18n: true}
+      - {label: Body / 正文, name: body, widget: markdown, required: false, i18n: true}
   - name: events_en
     label: Carousel Events (English)
     description: "Save creates a draft only. Click Publish and wait for the GitHub merge and Cloudflare deployment. Show in carousel controls visibility; lower Order values appear earlier. Order 1 is reserved for the AIR circuit animation."
@@ -119,44 +110,48 @@ collections:
       - {label: 进入轮播, name: featured, widget: boolean, default: true, hint: "关闭后会从首页轮播下架，但不会删除内容。"}
       - {label: 顺序, name: weight, widget: number, default: 10, min: 1, value_type: int, hint: "数字越小越靠前。1 保留给固定 AIR 实验室开场页，新轮播请使用 2 或更大的数字。"}
       - {label: 正文, name: body, widget: markdown, required: false}
-  - name: publications_en
-    label: Publications (English)
-    description: "Save creates a draft only. Click Publish and wait for the GitHub merge and Cloudflare deployment. Published CMS papers are added to the homepage publication list automatically; records already present in the DBLP list are de-duplicated by title."
-    folder: content/en/publications
+  - name: publications
+    label: Publications / 论文成果
+    label_singular: Publication / 论文
+    description: "Edit both language versions in one entry. Official paper title, authors, venue, year and DOI are shared; summaries and body text can be translated. / 在同一条目中维护中英文；正式题名、作者、期刊会议、年份与 DOI 共用。"
+    folder: content/cms/publications
     create: true
+    i18n: true
     filter: {field: cms_managed, value: true}
     path: '{{slug}}/index'
     fields:
-      - {label: CMS managed, name: cms_managed, widget: hidden, default: true}
-      - {label: Show in publication list, name: list_on_homepage, widget: hidden, default: true}
-      - {label: Title, name: title, widget: string}
-      - {label: Publication date, name: date, widget: datetime, time_format: false, hint: "Must be today or earlier. Hugo does not publish future-dated pages."}
-      - {label: Authors, name: authors, widget: string}
-      - {label: Venue, name: venue, widget: string, hint: "Journal or conference name"}
-      - {label: Year, name: year, widget: number}
-      - {label: DOI, name: doi, widget: string, required: false}
-      - {label: PDF, name: pdf, widget: string, required: false, hint: "Path to the PDF inside the static folder, e.g. /uploads/papers/filename.pdf"}
-      - {label: Summary, name: summary, widget: text, required: false}
-      - {label: Body, name: body, widget: markdown, required: false}
-  - name: publications_zh
-    label: 出版物（中文）
-    description: "保存只会创建草稿。必须点击 Publish，并等待 GitHub 合并及 Cloudflare 部署完成。发布后的 CMS 论文会自动加入首页论文列表；已经存在于 DBLP 列表中的论文会按标题自动去重。"
-    folder: content/zh/publications
+      - {label: CMS managed, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
+      - {label: Show on homepage / 首页显示, name: list_on_homepage, widget: boolean, default: true, i18n: duplicate}
+      - {label: Official paper title / 正式论文题名, name: title, widget: string, i18n: duplicate, hint: "Keep the DBLP title exactly the same to prevent duplicates. / 与 DBLP 题名完全一致可避免重复。"}
+      - {label: Publication date / 发布日期, name: date, widget: datetime, time_format: false, i18n: duplicate, hint: "Must be today or earlier. / 不得晚于今天。"}
+      - {label: Authors / 作者, name: authors, widget: string, i18n: duplicate}
+      - {label: Venue / 期刊或会议, name: venue, widget: string, i18n: duplicate}
+      - {label: Year / 年份, name: year, widget: number, value_type: int, i18n: duplicate}
+      - {label: DOI, name: doi, widget: string, required: false, i18n: duplicate}
+      - {label: PDF, name: pdf, widget: file, required: false, i18n: duplicate, hint: "Upload or select the paper PDF. / 上传或选择论文 PDF。"}
+      - {label: Summary / 摘要, name: summary, widget: text, required: false, i18n: true}
+      - {label: Body / 详细介绍, name: body, widget: markdown, required: false, i18n: true}
+  - name: projects
+    label: Projects / 科研项目
+    label_singular: Project / 项目
+    description: "Project-specific bilingual fields based on the current NSFC project: funding organization, grant number, project duration and related event. / 按现有国家自然科学基金项目设置专属字段。"
+    folder: content/cms/projects
     create: true
+    i18n: true
     filter: {field: cms_managed, value: true}
     path: '{{slug}}/index'
     fields:
-      - {label: CMS 管理标记, name: cms_managed, widget: hidden, default: true}
-      - {label: 显示在论文列表, name: list_on_homepage, widget: hidden, default: true}
-      - {label: 标题, name: title, widget: string}
-      - {label: 发布日期, name: date, widget: datetime, time_format: false, hint: "不得晚于今天；Hugo 不会生成未来日期的论文详情页。"}
-      - {label: 作者, name: authors, widget: string}
-      - {label: 发表场所, name: venue, widget: string, hint: "期刊或会议名称"}
-      - {label: 年份, name: year, widget: number}
-      - {label: DOI, name: doi, widget: string, required: false}
-      - {label: PDF, name: pdf, widget: string, required: false, hint: "PDF 相对路径，例如 /uploads/papers/filename.pdf"}
-      - {label: 摘要, name: summary, widget: text, required: false}
-      - {label: 正文, name: body, widget: markdown, required: false}
+      - {label: CMS managed, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
+      - {label: Project name / 项目名称, name: title, widget: string, i18n: true}
+      - {label: Record date / 项目日期, name: date, widget: datetime, time_format: false, i18n: duplicate}
+      - {label: Display order / 首页顺序, name: weight, widget: number, default: 10, min: 1, value_type: int, i18n: duplicate, hint: "Lower numbers appear first. / 数字越小越靠前。"}
+      - {label: Status / 项目状态, name: status, widget: select, default: Active, options: [{label: Active / 进行中, value: Active}, {label: Completed / 已完成, value: Completed}, {label: Upcoming / 即将开始, value: Upcoming}], i18n: duplicate}
+      - {label: Short summary / 项目简介, name: summary, widget: text, i18n: true, hint: "Short text displayed on the homepage card. / 首页项目卡片上的简短介绍。"}
+      - {label: Project abstract / 项目摘要, name: abstract, widget: text, i18n: true}
+      - {label: Funding organization / 资助机构, name: funded_by, widget: string, required: false, i18n: true, hint: "Example: National Natural Science Foundation of China (NSFC) / 国家自然科学基金"}
+      - {label: Grant number / 项目批准号, name: grant_no, widget: string, required: false, i18n: duplicate}
+      - {label: Project duration / 项目周期, name: duration, widget: string, required: false, i18n: true, hint: "Example: 2026-01-01 — 2028-12-31 / 2026 年 1 月—2028 年 12 月"}
+      - {label: Related event / 相关活动, name: event, widget: string, required: false, i18n: true}
   - name: awards_en
     label: Awards (English)
     folder: content/en/awards
