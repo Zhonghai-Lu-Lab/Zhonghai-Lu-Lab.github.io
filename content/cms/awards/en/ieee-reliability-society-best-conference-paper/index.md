@@ -1,4 +1,5 @@
 ---
+cms_managed: true
 title: "2024 IEEE Reliability Society Best Conference Paper Award"
 date: 2024-12-31
 recipient: "Prof. Zhonghai Lu and team"

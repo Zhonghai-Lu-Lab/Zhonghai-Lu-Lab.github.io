@@ -1,4 +1,5 @@
 ---
+cms_managed: true
 title: "IEEE 可靠性学会 2024 年度最佳会议论文奖"
 date: 2024-12-31
 recipient: "鲁中海教授及团队"

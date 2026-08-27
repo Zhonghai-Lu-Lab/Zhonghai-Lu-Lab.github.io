@@ -53,6 +53,26 @@ mounts:
     sites:
       matrix:
         languages: [zh]
+  - source: content/cms/events/en
+    target: content/events
+    sites:
+      matrix:
+        languages: [en]
+  - source: content/cms/events/zh
+    target: content/events
+    sites:
+      matrix:
+        languages: [zh]
+  - source: content/cms/awards/en
+    target: content/awards
+    sites:
+      matrix:
+        languages: [en]
+  - source: content/cms/awards/zh
+    target: content/awards
+    sites:
+      matrix:
+        languages: [zh]
   - source: hugo-blox/blox/community
     target: layouts/_partials/blox/community/
     files:

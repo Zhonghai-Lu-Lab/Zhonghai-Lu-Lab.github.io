@@ -34,82 +34,48 @@ collections:
       - {label: Featured image / 封面图片, name: image, widget: image, required: false, i18n: duplicate, hint: "One shared image for both languages. / 中英文共用一张图片。"}
       - {label: Image alt text / 图片说明, name: image_alt, widget: string, required: false, i18n: true}
       - {label: Body / 正文, name: body, widget: markdown, required: false, i18n: true}
-  - name: events_en
-    label: Carousel Events (English)
-    description: "Save creates a draft only. Click Publish and wait for the GitHub merge and Cloudflare deployment. Show in carousel controls visibility; lower Order values appear earlier. Order 1 is reserved for the AIR circuit animation."
-    folder: content/en/events
+  - name: events
+    label: Carousel Events / 首页轮播
+    label_singular: Carousel event / 轮播事件
+    description: "Edit the English and Chinese slides in one entry. Save creates a draft only; click Publish and wait for deployment. / 在同一条目中维护中英文轮播；保存只是草稿，必须点击 Publish 并等待部署。"
+    folder: content/cms/events
     create: true
+    i18n: true
     filter: {field: cms_managed, value: true}
     path: '{{slug}}/index'
     fields:
-      - {label: CMS managed, name: cms_managed, widget: hidden, default: true}
-      - {label: Title, name: title, widget: string}
-      - {label: Publication date, name: date, widget: datetime, time_format: false, hint: "Must be today or earlier. Hugo does not publish future-dated slides."}
-      - {label: Kicker, name: kicker, widget: string}
-      - {label: Summary, name: summary, widget: text, required: false}
-      - {label: Hero image, name: hero, widget: image}
-      - {label: Image alt text, name: hero_alt, widget: string}
-      - {label: Presentation style, name: hero_mode, widget: select, required: false, default: standard, options: [{label: Standard image, value: standard}, {label: Poster, value: poster}, {label: Split image and text, value: split}, {label: AIR circuit animation, value: circuit}], hint: "Use AIR circuit animation only for the permanent AIR Lab opening slide."}
-      - {label: Image position, name: hero_position, widget: string, required: false, hint: "Optional CSS position such as top, center, or 50% 30%."}
-      - label: Event details
+      - {label: CMS managed / CMS 管理标记, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
+      - {label: Title / 标题, name: title, widget: string, i18n: true}
+      - {label: Publication date / 发布日期, name: date, widget: datetime, time_format: false, i18n: duplicate, hint: "Must be today or earlier. / 不得晚于今天。"}
+      - {label: Kicker / 栏目短标题, name: kicker, widget: string, i18n: true}
+      - {label: Summary / 摘要, name: summary, widget: text, required: false, i18n: true}
+      - {label: Hero image / 主图, name: hero, widget: image, i18n: duplicate}
+      - {label: Image alt text / 图片说明, name: hero_alt, widget: string, i18n: true}
+      - {label: Presentation style / 展示样式, name: hero_mode, widget: select, required: false, default: standard, options: [{label: Standard image / 标准图片, value: standard}, {label: Poster / 海报, value: poster}, {label: Split image and text / 图文分栏, value: split}, {label: AIR circuit animation / AIR 芯片动画, value: circuit}], i18n: duplicate, hint: "Use AIR circuit animation only for the permanent AIR opening slide. / AIR 芯片动画仅用于固定开场页。"}
+      - {label: Image position / 图片位置, name: hero_position, widget: string, required: false, i18n: duplicate, hint: "Optional CSS position, such as top, center, or 50% 30%. / 可选，例如 top、center 或 50% 30%。"}
+      - label: Event details / 事件详情
         name: details
         widget: list
         required: false
-        hint: "Optional structured details such as speaker, time, venue, and host."
+        i18n: true
+        hint: "Speaker, time, venue, host, etc. / 可填写主讲、时间、地点、主持等信息。"
         fields:
-          - {label: Label, name: label, widget: string}
-          - {label: Value, name: value, widget: string}
-      - {label: Button text, name: button, widget: string, required: false, hint: "Use for a single button; leave empty when using Additional buttons"}
-      - {label: Button target, name: target, widget: string, required: false, pattern: ['^(#|/|https?://)', 'Use #anchor, /path/, or a full http(s) URL'], hint: "Use a section anchor such as #news or a verified page path such as /publications/paper-slug/"}
-      - label: Additional buttons
+          - {label: Label / 标签, name: label, widget: string}
+          - {label: Value / 内容, name: value, widget: string}
+      - {label: Button text / 按钮文字, name: button, widget: string, required: false, i18n: true, hint: "Leave empty when using Additional buttons. / 使用多按钮时留空。"}
+      - {label: Button target / 按钮目标, name: target, widget: string, required: false, i18n: true, pattern: ['^(#|/|https?://)', 'Use #anchor, /path/, or a full http(s) URL / 请填写 #锚点、/站内路径/ 或完整 URL'], hint: "Example: #news or /news/article-slug/. / 例如 #news 或 /zh/news/article-slug/。"}
+      - label: Additional buttons / 多按钮
         name: actions
         widget: list
         required: false
-        hint: "Use this list when the slide needs more than one button"
+        i18n: true
+        hint: "Add items only when more than one button is needed. / 仅在需要多个按钮时添加。"
         fields:
-          - {label: Button text, name: label, widget: string}
-          - {label: Button target, name: url, widget: string, pattern: ['^(#|/|https?://)', 'Use #anchor, /path/, or a full http(s) URL']}
-      - {label: Show in carousel, name: featured, widget: boolean, default: true, hint: "Turn off to remove this item from the homepage carousel without deleting it."}
-      - {label: Order, name: weight, widget: number, default: 10, min: 1, value_type: int, hint: "Lower numbers appear earlier. Keep 1 for the permanent AIR Lab opening slide; use 2 or greater for new slides."}
-      - {label: Body, name: body, widget: markdown, required: false}
-  - name: events_zh
-    label: 轮播事件（中文）
-    description: "保存只会创建草稿。必须点击 Publish，并等待 GitHub 合并及 Cloudflare 部署完成。进入轮播控制上下架；顺序数字越小越靠前，1 保留给 AIR 芯片动画。"
-    folder: content/zh/events
-    create: true
-    filter: {field: cms_managed, value: true}
-    path: '{{slug}}/index'
-    fields:
-      - {label: CMS 管理标记, name: cms_managed, widget: hidden, default: true}
-      - {label: 标题, name: title, widget: string}
-      - {label: 发布日期, name: date, widget: datetime, time_format: false, hint: "不得晚于今天；Hugo 不会生成未来日期的轮播内容。"}
-      - {label: 栏目短标题, name: kicker, widget: string}
-      - {label: 摘要, name: summary, widget: text, required: false}
-      - {label: 主图, name: hero, widget: image}
-      - {label: 图片替代文本, name: hero_alt, widget: string}
-      - {label: 展示样式, name: hero_mode, widget: select, required: false, default: standard, options: [{label: 标准图片, value: standard}, {label: 海报, value: poster}, {label: 图文分栏, value: split}, {label: AIR 芯片动画, value: circuit}], hint: "AIR 芯片动画仅用于固定的 AIR 实验室开场页。"}
-      - {label: 图片位置, name: hero_position, widget: string, required: false, hint: "可选，例如 top、center 或 50% 30%。"}
-      - label: 事件详情
-        name: details
-        widget: list
-        required: false
-        hint: "可选，可填写主讲、时间、地点、主持等结构化信息。"
-        fields:
-          - {label: 标签, name: label, widget: string}
-          - {label: 内容, name: value, widget: string}
-      - {label: 按钮文字, name: button, widget: string, required: false, hint: "单按钮时填写；使用多个按钮时留空"}
-      - {label: 按钮目标, name: target, widget: string, required: false, pattern: ['^(#|/|https?://)', '请填写 #锚点、/站内路径/ 或完整 http(s) URL'], hint: "填写栏目锚点（如 #news）或已核实的详情页路径（如 /zh/publications/paper-slug/）"}
-      - label: 多按钮
-        name: actions
-        widget: list
-        required: false
-        hint: "轮播需要多个按钮时在此添加"
-        fields:
-          - {label: 按钮文字, name: label, widget: string}
-          - {label: 按钮目标, name: url, widget: string, pattern: ['^(#|/|https?://)', '请填写 #锚点、/站内路径/ 或完整 http(s) URL']}
-      - {label: 进入轮播, name: featured, widget: boolean, default: true, hint: "关闭后会从首页轮播下架，但不会删除内容。"}
-      - {label: 顺序, name: weight, widget: number, default: 10, min: 1, value_type: int, hint: "数字越小越靠前。1 保留给固定 AIR 实验室开场页，新轮播请使用 2 或更大的数字。"}
-      - {label: 正文, name: body, widget: markdown, required: false}
+          - {label: Button text / 按钮文字, name: label, widget: string}
+          - {label: Button target / 按钮目标, name: url, widget: string, pattern: ['^(#|/|https?://)', 'Use #anchor, /path/, or a full http(s) URL / 请填写 #锚点、/站内路径/ 或完整 URL']}
+      - {label: Show in carousel / 进入轮播, name: featured, widget: boolean, default: true, i18n: duplicate, hint: "Turn off to hide without deleting. / 关闭后下架但不删除。"}
+      - {label: Order / 顺序, name: weight, widget: number, default: 10, min: 1, value_type: int, i18n: duplicate, hint: "Lower numbers appear first; keep 1 for the AIR opening slide. / 数字越小越靠前；1 保留给 AIR 开场页。"}
+      - {label: Body / 正文, name: body, widget: markdown, required: false, i18n: true}
   - name: publications
     label: Publications / 论文成果
     label_singular: Publication / 论文
@@ -152,29 +118,21 @@ collections:
       - {label: Grant number / 项目批准号, name: grant_no, widget: string, required: false, i18n: duplicate}
       - {label: Project duration / 项目周期, name: duration, widget: string, required: false, i18n: true, hint: "Example: 2026-01-01 — 2028-12-31 / 2026 年 1 月—2028 年 12 月"}
       - {label: Related event / 相关活动, name: event, widget: string, required: false, i18n: true}
-  - name: awards_en
-    label: Awards (English)
-    folder: content/en/awards
+  - name: awards
+    label: Awards / 奖项
+    label_singular: Award / 奖项
+    description: "Edit the English and Chinese award records in one entry. / 在同一条目中维护奖项的中英文版本。"
+    folder: content/cms/awards
     create: true
+    i18n: true
+    filter: {field: cms_managed, value: true}
     path: '{{slug}}/index'
     fields:
-      - {label: Title, name: title, widget: string}
-      - {label: Date, name: date, widget: datetime, time_format: false}
-      - {label: Recipient, name: recipient, widget: string, hint: "Person, team, or project receiving the award"}
-      - {label: Awarder, name: awarder, widget: string, required: false, hint: "Optional organization or program granting the award"}
-      - {label: Level, name: level, widget: string, required: false, hint: "Optional, e.g. Best Paper / National / Provincial / University"}
-      - {label: Summary, name: summary, widget: text, required: false}
-      - {label: Body, name: body, widget: markdown, required: false}
-  - name: awards_zh
-    label: 奖项（中文）
-    folder: content/zh/awards
-    create: true
-    path: '{{slug}}/index'
-    fields:
-      - {label: 标题, name: title, widget: string}
-      - {label: 日期, name: date, widget: datetime, time_format: false}
-      - {label: 获奖人或团队, name: recipient, widget: string, hint: "填写获奖个人、团队或项目"}
-      - {label: 颁奖方, name: awarder, widget: string, required: false, hint: "可选，填写颁奖单位或项目名称"}
-      - {label: 级别, name: level, widget: string, required: false, hint: "可选，例如 最佳论文 / 国家级 / 省级 / 校级"}
-      - {label: 摘要, name: summary, widget: text, required: false}
-      - {label: 正文, name: body, widget: markdown, required: false}
+      - {label: CMS managed / CMS 管理标记, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
+      - {label: Title / 标题, name: title, widget: string, i18n: true}
+      - {label: Date / 日期, name: date, widget: datetime, time_format: false, i18n: duplicate}
+      - {label: Recipient / 获奖人或团队, name: recipient, widget: string, i18n: true, hint: "Person, team, or project receiving the award. / 填写获奖个人、团队或项目。"}
+      - {label: Awarder / 颁奖方, name: awarder, widget: string, required: false, i18n: true, hint: "Optional awarding organization or program. / 可选，填写颁奖单位或项目。"}
+      - {label: Level / 级别, name: level, widget: string, required: false, i18n: true, hint: "For example: Best Paper, National, Provincial, or University. / 例如：最佳论文、国家级、省级或校级。"}
+      - {label: Summary / 摘要, name: summary, widget: text, required: false, i18n: true}
+      - {label: Body / 正文, name: body, widget: markdown, required: false, i18n: true}
