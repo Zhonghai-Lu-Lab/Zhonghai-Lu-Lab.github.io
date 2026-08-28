@@ -114,6 +114,11 @@ collections:
       - {label: Status / 项目状态, name: status, widget: select, default: Active, options: [{label: Active / 进行中, value: Active}, {label: Completed / 已完成, value: Completed}, {label: Upcoming / 即将开始, value: Upcoming}], i18n: duplicate}
       - {label: Short summary / 项目简介, name: summary, widget: text, i18n: true, hint: "Short text displayed on the homepage card. / 首页项目卡片上的简短介绍。"}
       - {label: Project abstract / 项目摘要, name: abstract, widget: text, i18n: true}
+      # Preserve existing project metadata without exposing NSFC-specific inputs in the CMS form.
+      - {label: Funding metadata, name: funded_by, widget: hidden, required: false, i18n: true}
+      - {label: Grant metadata, name: grant_no, widget: hidden, required: false, i18n: duplicate}
+      - {label: Duration metadata, name: duration, widget: hidden, required: false, i18n: true}
+      - {label: Event metadata, name: event, widget: hidden, required: false, i18n: true}
   - name: awards
     label: Awards / 奖项
     label_singular: Award / 奖项
