@@ -100,7 +100,7 @@ collections:
   - name: projects
     label: Projects / 科研项目
     label_singular: Project / 项目
-    description: "Project-specific bilingual fields based on the current NSFC project: funding organization, grant number, project duration and related event. / 按现有国家自然科学基金项目设置专属字段。"
+    description: "Maintain the English and Chinese versions of each research project in one entry. / 在同一条目中维护科研项目的中英文版本。"
     folder: content/cms/projects
     create: true
     i18n: true
@@ -114,10 +114,6 @@ collections:
       - {label: Status / 项目状态, name: status, widget: select, default: Active, options: [{label: Active / 进行中, value: Active}, {label: Completed / 已完成, value: Completed}, {label: Upcoming / 即将开始, value: Upcoming}], i18n: duplicate}
       - {label: Short summary / 项目简介, name: summary, widget: text, i18n: true, hint: "Short text displayed on the homepage card. / 首页项目卡片上的简短介绍。"}
       - {label: Project abstract / 项目摘要, name: abstract, widget: text, i18n: true}
-      - {label: Funding organization / 资助机构, name: funded_by, widget: string, required: false, i18n: true, hint: "Example: National Natural Science Foundation of China (NSFC) / 国家自然科学基金"}
-      - {label: Grant number / 项目批准号, name: grant_no, widget: string, required: false, i18n: duplicate}
-      - {label: Project duration / 项目周期, name: duration, widget: string, required: false, i18n: true, hint: "Example: 2026-01-01 — 2028-12-31 / 2026 年 1 月—2028 年 12 月"}
-      - {label: Related event / 相关活动, name: event, widget: string, required: false, i18n: true}
   - name: awards
     label: Awards / 奖项
     label_singular: Award / 奖项

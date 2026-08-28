@@ -28,10 +28,6 @@
     'Status / 项目状态': ['Status', '项目状态'],
     'Short summary / 项目简介': ['Short summary', '项目简介'],
     'Project abstract / 项目摘要': ['Project abstract', '项目摘要'],
-    'Funding organization / 资助机构': ['Funding organization', '资助机构'],
-    'Grant number / 项目批准号': ['Grant number', '项目批准号'],
-    'Project duration / 项目周期': ['Project duration', '项目周期'],
-    'Related event / 相关活动': ['Related event', '相关活动'],
     'Kicker / 栏目短标题': ['Kicker', '栏目短标题'],
     'Hero image / 主图': ['Hero image', '主图'],
     'Presentation style / 展示样式': ['Presentation style', '展示样式'],
@@ -78,14 +74,6 @@
     'Short text displayed on the homepage card. / 首页项目卡片上的简短介绍。': [
       'Short text displayed on the homepage card.',
       '填写显示在首页项目卡片上的简短介绍。',
-    ],
-    'Example: National Natural Science Foundation of China (NSFC) / 国家自然科学基金': [
-      'Example: National Natural Science Foundation of China (NSFC).',
-      '例如：国家自然科学基金。',
-    ],
-    'Example: 2026-01-01 — 2028-12-31 / 2026 年 1 月—2028 年 12 月': [
-      'Example: 2026-01-01 — 2028-12-31.',
-      '例如：2026 年 1 月—2028 年 12 月。',
     ],
     'Use AIR circuit animation only for the permanent AIR opening slide. / AIR 芯片动画仅用于固定开场页。': [
       'Use AIR circuit animation only for the permanent AIR opening slide.',
