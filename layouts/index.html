@@ -6,6 +6,7 @@
   <meta name="description" content="{{ .Params.summary | default .Site.Params.hugoblox.identity.description }}">
   <meta name="theme-color" content="#082e3a">
   <title>{{ .Title }} · {{ .Site.Title }}</title>
+  <link rel="canonical" href="{{ .Permalink }}">
   <link rel="stylesheet" href="{{ "css/lab.css" | relURL }}?v=20260826-2">
   <script defer src="{{ "js/lab.js" | relURL }}?v=20260818-10"></script>
 </head>
