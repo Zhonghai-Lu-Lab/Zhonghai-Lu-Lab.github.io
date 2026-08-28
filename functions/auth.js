@@ -1,4 +1,4 @@
-const DEFAULT_CMS_ORIGIN = 'https://zhonghai-lu-lab-website.pages.dev';
+const DEFAULT_CMS_ORIGIN = 'https://zhonghai-lu-lab.github.io';
 
 function hex(bytes) {
   return Array.from(bytes, (byte) => byte.toString(16).padStart(2, '0')).join('');

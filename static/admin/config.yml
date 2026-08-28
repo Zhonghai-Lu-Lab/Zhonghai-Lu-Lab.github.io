@@ -1,10 +1,10 @@
 backend:
   name: github
-  repo: Zhonghai-Lu-Lab/zhonghai-lu-lab-website
+  repo: Zhonghai-Lu-Lab/Zhonghai-Lu-Lab.github.io
   branch: main
   base_url: https://zhonghai-lu-lab-website.pages.dev
   auth_endpoint: /auth
-  site_domain: zhonghai-lu-lab-website.pages.dev
+  site_domain: zhonghai-lu-lab.github.io
 
 publish_mode: editorial_workflow
 media_folder: static/images/uploads
@@ -19,7 +19,7 @@ collections:
   - name: news
     label: News / 新闻
     label_singular: News entry / 新闻
-    description: "Edit the English and Chinese versions in the same entry. Save creates a draft only; click Publish and wait for GitHub and Cloudflare deployment. / 在同一条目中切换 English 与中文；保存只是草稿，必须点击 Publish。"
+    description: "Edit the English and Chinese versions in the same entry. Save creates a draft only; click Publish and wait for GitHub Pages deployment. / 在同一条目中切换 English 与中文；保存只是草稿，必须点击 Publish 并等待 GitHub Pages 部署。"
     folder: content/cms/news
     create: true
     i18n: true
