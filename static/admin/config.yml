@@ -83,8 +83,6 @@ collections:
     folder: content/cms/publications
     create: true
     i18n: true
-    filter: {field: cms_managed, value: true}
-    path: '{{slug}}/index'
     fields:
       - {label: CMS managed, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
       - {label: Show on homepage / 首页显示, name: list_on_homepage, widget: boolean, default: true, i18n: duplicate}
