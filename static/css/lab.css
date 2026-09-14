@@ -612,6 +612,7 @@ a:hover .inline-link span { transform: translateX(5px); }
 .publication-year li h3 { margin: 0 0 6px; font-size: 14px; line-height: 1.45; }
 .publication-year li h3 a { color: #172d34; text-decoration: none; }
 .publication-year li h3 a:hover { color: #9a6c19; text-decoration: underline; }
+.publication-year li > .publication-status { display: block; width: fit-content; margin-top: 7px; padding: 2px 7px; border: 1px solid #b8872b; border-radius: 999px; color: #8a5a0a; font-family: Inter,"Helvetica Neue",Arial,sans-serif; font-size: 9px; font-weight: 700; line-height: 1.35; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
 .publication-year li p,.publication-year li > span { margin: 0; color: #657276; font-size: 11px; line-height: 1.55; }
 .publication-source { color: var(--muted); font-size: 11px; }
 .publication-source a { color: #9a6c19; }

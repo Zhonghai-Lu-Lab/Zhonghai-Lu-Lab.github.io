@@ -93,6 +93,7 @@ collections:
       - {label: Authors / 作者, name: authors, widget: string, i18n: duplicate}
       - {label: Venue / 期刊或会议, name: venue, widget: string, i18n: duplicate}
       - {label: Year / 年份, name: year, widget: number, value_type: int, i18n: duplicate}
+      - {label: Publication status / 论文状态, name: publication_status, widget: select, default: published, options: [{label: Published / 已发表, value: published}, {label: Accepted / 已接收, value: accepted}], i18n: duplicate, hint: "Use Accepted after acceptance but before the paper appears in the official proceedings or journal. / 论文已接收但尚未在正式论文集或期刊上线时选择“已接收”。"}
       - {label: DOI, name: doi, widget: string, required: false, i18n: duplicate}
       - {label: PDF, name: pdf, widget: file, required: false, i18n: duplicate, hint: "Upload or select the paper PDF. / 上传或选择论文 PDF。"}
       - {label: Summary / 摘要, name: summary, widget: text, required: false, i18n: true}

@@ -275,6 +275,7 @@
                     <h3>{{ if .link }}<a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3>
                     <p>{{ delimit .authors ", " }}</p>
                     <span>{{ .venue }}{{ with .pages }} · {{ . }}{{ end }}</span>
+                    {{ if eq .status "accepted" }}<span class="publication-status">{{ if $zh }}已接收{{ else }}Accepted{{ end }}</span>{{ end }}
                   </li>
                 {{ end }}
                 {{ range $newCmsItems }}
@@ -282,6 +283,7 @@
                     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
                     <p>{{ .Params.authors }}</p>
                     <span>{{ .Params.venue }}{{ with .Params.doi }} · <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}</span>
+                    {{ if eq .Params.publication_status "accepted" }}<span class="publication-status">{{ if $zh }}已接收{{ else }}Accepted{{ end }}</span>{{ end }}
                   </li>
                 {{ end }}
               </ol>
