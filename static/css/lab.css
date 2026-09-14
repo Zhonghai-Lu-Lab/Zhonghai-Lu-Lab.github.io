@@ -489,6 +489,8 @@ a:hover .inline-link span { transform: translateX(5px); }
 .project-information dl > div:last-child:nth-child(odd) { grid-column: 1/-1; }
 .project-information dt { margin-bottom: 9px; color: var(--teal); font-family: Inter,"Helvetica Neue",Arial,"Noto Sans SC","Microsoft YaHei",sans-serif; font-size: 12px; font-weight: 650; letter-spacing: .05em; text-transform: uppercase; }
 .project-information dd { margin: 0; color: #34494f; font-family: Inter,"Helvetica Neue",Arial,"Noto Sans SC","Microsoft YaHei",sans-serif; font-size: 16px; font-weight: 450; line-height: 1.6; font-variant-numeric: lining-nums tabular-nums; font-feature-settings: "lnum" 1,"tnum" 1; }
+.publication-header h1 { white-space: normal; word-break: normal; overflow-wrap: anywhere; }
+.publication-information a { color: var(--teal); overflow-wrap: anywhere; }
 .project-abstract { max-width: 880px; }
 .project-abstract > div { color: #34494f; font-family: Inter,"Helvetica Neue",Arial,"Noto Sans SC","Microsoft YaHei",sans-serif; font-size: clamp(16px,1.45vw,18px); line-height: 1.9; }
 .article-section-news,.article-section-awards { font-family: Inter,"Helvetica Neue",Arial,"Noto Sans SC","Microsoft YaHei",sans-serif; }

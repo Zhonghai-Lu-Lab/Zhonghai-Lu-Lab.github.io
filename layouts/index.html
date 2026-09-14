@@ -259,18 +259,18 @@
           {{ range $index, $year := $publicationYears }}
             {{ $dataItems := slice }}
             {{ range $bibliography.years }}{{ if eq (int .year) $year }}{{ $dataItems = .items }}{{ end }}{{ end }}
-            {{ $cmsItems := where $cmsPublications "Params.year" $year }}
-            {{ $newCmsItems := slice }}
-            {{ range $cmsItems.ByDate.Reverse }}
-              {{ $cmsPaper := . }}{{ $duplicate := false }}
-              {{ range $dataItems }}{{ if eq (anchorize .title) (anchorize $cmsPaper.Title) }}{{ $duplicate = true }}{{ end }}{{ end }}
-              {{ if not $duplicate }}{{ $newCmsItems = $newCmsItems | append $cmsPaper }}{{ end }}
+            {{ $cmsItems := (where $cmsPublications "Params.year" $year).ByDate.Reverse }}
+            {{ $unmanagedDataItems := slice }}
+            {{ range $dataItems }}
+              {{ $dataPaper := . }}{{ $managed := false }}
+              {{ range $cmsItems }}{{ if eq (anchorize .Title) (anchorize $dataPaper.title) }}{{ $managed = true }}{{ end }}{{ end }}
+              {{ if not $managed }}{{ $unmanagedDataItems = $unmanagedDataItems | append $dataPaper }}{{ end }}
             {{ end }}
-            {{ $paperCount := add (len $dataItems) (len $newCmsItems) }}
+            {{ $paperCount := add (len $unmanagedDataItems) (len $cmsItems) }}
             <details class="publication-year"{{ if eq $index 0 }} open{{ end }}>
               <summary><strong>{{ $year }}</strong><span>{{ $paperCount }} {{ if $zh }}篇{{ else }}{{ if eq $paperCount 1 }}paper{{ else }}papers{{ end }}{{ end }}</span></summary>
               <ol>
-                {{ range $dataItems }}
+                {{ range $unmanagedDataItems }}
                   <li>
                     <h3>{{ if .link }}<a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</h3>
                     <p>{{ delimit .authors ", " }}</p>
@@ -278,12 +278,16 @@
                     {{ if eq .status "accepted" }}<span class="publication-status">{{ if $zh }}已接收{{ else }}Accepted{{ end }}</span>{{ end }}
                   </li>
                 {{ end }}
-                {{ range $newCmsItems }}
+                {{ range $cmsItems }}
                   <li>
-                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    {{ $accepted := eq .Params.publication_status "accepted" }}
+                    {{ $publicationURL := .RelPermalink }}
+                    {{ $external := false }}
+                    {{ with .Params.doi }}{{ if not $accepted }}{{ $publicationURL = cond (hasPrefix . "http") . (printf "https://doi.org/%s" .) }}{{ $external = true }}{{ end }}{{ end }}
+                    <h3><a href="{{ $publicationURL }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Title }}</a></h3>
                     <p>{{ .Params.authors }}</p>
-                    <span>{{ .Params.venue }}{{ with .Params.doi }} · <a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}</span>
-                    {{ if eq .Params.publication_status "accepted" }}<span class="publication-status">{{ if $zh }}已接收{{ else }}Accepted{{ end }}</span>{{ end }}
+                    <span>{{ .Params.venue }}{{ with .Params.doi }}{{ $doiURL := cond (hasPrefix . "http") . (printf "https://doi.org/%s" .) }} · <a href="{{ $doiURL }}" target="_blank" rel="noopener">DOI</a>{{ end }}</span>
+                    {{ if $accepted }}<span class="publication-status">{{ if $zh }}已接收{{ else }}Accepted{{ end }}</span>{{ end }}
                   </li>
                 {{ end }}
               </ol>

@@ -28,7 +28,7 @@ collections:
     fields:
       - {label: CMS managed, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
       - {label: Title / 标题, name: title, widget: string, i18n: true}
-      - {label: Publication date / 发布日期, name: date, widget: datetime, time_format: false, i18n: duplicate, hint: "Must be today or earlier. / 不得晚于今天。"}
+      - {label: Record date / 记录日期, name: date, widget: datetime, time_format: false, i18n: duplicate, hint: "Used to order CMS entries. Use the acceptance date until the paper is published. / 用于排列 CMS 条目；论文正式发表前可填写接收日期。"}
       - {label: Category / 分类, name: category, widget: string, i18n: true}
       - {label: Summary / 摘要, name: summary, widget: text, required: false, i18n: true}
       - {label: Featured image / 封面图片, name: image, widget: image, required: false, i18n: duplicate, hint: "One shared image for both languages. / 中英文共用一张图片。"}
@@ -94,7 +94,8 @@ collections:
       - {label: Venue / 期刊或会议, name: venue, widget: string, i18n: duplicate}
       - {label: Year / 年份, name: year, widget: number, value_type: int, i18n: duplicate}
       - {label: Publication status / 论文状态, name: publication_status, widget: select, default: published, options: [{label: Published / 已发表, value: published}, {label: Accepted / 已接收, value: accepted}], i18n: duplicate, hint: "Use Accepted after acceptance but before the paper appears in the official proceedings or journal. / 论文已接收但尚未在正式论文集或期刊上线时选择“已接收”。"}
-      - {label: DOI, name: doi, widget: string, required: false, i18n: duplicate}
+      - {label: Acceptance date / 接收日期, name: acceptance_date, widget: datetime, required: false, time_format: false, i18n: duplicate, hint: "Required while the status is Accepted. Update it when the exact date is confirmed. / 状态为“已接收”时填写，确认准确日期后请更新。"}
+      - {label: DOI, name: doi, widget: string, required: false, i18n: duplicate, hint: "After changing the status to Published, the homepage title links directly to this DOI. / 改为“已发表”后，首页论文标题会直接跳转至此 DOI。"}
       - {label: PDF, name: pdf, widget: file, required: false, i18n: duplicate, hint: "Upload or select the paper PDF. / 上传或选择论文 PDF。"}
       - {label: Summary / 摘要, name: summary, widget: text, required: false, i18n: true}
       - {label: Body / 详细介绍, name: body, widget: markdown, required: false, i18n: true}

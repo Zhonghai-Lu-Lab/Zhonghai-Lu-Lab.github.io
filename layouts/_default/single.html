@@ -2,7 +2,28 @@
 {{ $zh := eq .Site.Language.Lang "zh" }}
 {{ $anchor := printf "#%s" .Section }}
 {{ if eq .Section "authors" }}{{ $anchor = "#team" }}{{ else if eq .Section "opportunities" }}{{ $anchor = "#join-us" }}{{ else if eq .Section "events" }}{{ $anchor = "#hero" }}{{ end }}
-{{ if eq .Section "projects" }}
+{{ if eq .Section "publications" }}
+<article class="article-shell publication-detail">
+  <a class="article-back" href="{{ .Site.Home.RelPermalink }}#publications">← {{ if $zh }}返回论文成果{{ else }}Back to publications{{ end }}</a>
+  <header class="article-header publication-header">
+    <p class="section-index">{{ if eq .Params.publication_status "accepted" }}{{ if $zh }}已接收论文{{ else }}Accepted paper{{ end }}{{ else }}{{ if $zh }}已发表论文{{ else }}Published paper{{ end }}{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+  </header>
+  <section class="project-information publication-information" aria-labelledby="publication-information-title">
+    <h2 id="publication-information-title">{{ if $zh }}论文信息{{ else }}Paper information{{ end }}</h2>
+    <dl>
+      <div><dt>{{ if $zh }}状态{{ else }}Status{{ end }}</dt><dd>{{ if eq .Params.publication_status "accepted" }}{{ if $zh }}已接收{{ else }}Accepted{{ end }}{{ else }}{{ if $zh }}已发表{{ else }}Published{{ end }}{{ end }}</dd></div>
+      {{ with .Params.acceptance_date }}<div><dt>{{ if $zh }}接收日期{{ else }}Acceptance date{{ end }}</dt><dd>{{ time.Format "2006-01-02" . }}</dd></div>{{ end }}
+      {{ with .Params.authors }}<div><dt>{{ if $zh }}作者{{ else }}Authors{{ end }}</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.venue }}<div><dt>{{ if $zh }}期刊或会议{{ else }}Venue{{ end }}</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.year }}<div><dt>{{ if $zh }}年份{{ else }}Year{{ end }}</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.doi }}{{ $doiURL := cond (hasPrefix . "http") . (printf "https://doi.org/%s" .) }}<div><dt>DOI</dt><dd><a href="{{ $doiURL }}" target="_blank" rel="noopener">{{ . }}</a></dd></div>{{ end }}
+    </dl>
+  </section>
+  {{ with .Content }}<div class="article-body">{{ . }}</div>{{ end }}
+</article>
+{{ else if eq .Section "projects" }}
 <article class="article-shell project-detail">
   <a class="article-back" href="{{ .Site.Home.RelPermalink }}{{ $anchor }}">← {{ if $zh }}返回首页{{ else }}Back to homepage{{ end }}</a>
   <header class="article-header project-header">
