@@ -89,7 +89,7 @@ collections:
       - {label: CMS managed, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
       - {label: Show on homepage / 首页显示, name: list_on_homepage, widget: boolean, default: true, i18n: duplicate}
       - {label: Official paper title / 正式论文题名, name: title, widget: string, i18n: duplicate, hint: "Keep the DBLP title exactly the same to prevent duplicates. / 与 DBLP 题名完全一致可避免重复。"}
-      - {label: Publication date / 发布日期, name: date, widget: datetime, time_format: false, i18n: duplicate, hint: "Must be today or earlier. / 不得晚于今天。"}
+      - {label: Publication date / 发布日期, name: date, widget: datetime, time_format: false, i18n: duplicate, required: false, hint: "Must be today or earlier. / 不得晚于今天。"}
       - {label: Authors / 作者, name: authors, widget: string, i18n: duplicate}
       - {label: Venue / 期刊或会议, name: venue, widget: string, i18n: duplicate}
       - {label: Year / 年份, name: year, widget: number, value_type: int, i18n: duplicate}

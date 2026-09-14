@@ -259,14 +259,16 @@
           {{ range $index, $year := $publicationYears }}
             {{ $dataItems := slice }}
             {{ range $bibliography.years }}{{ if eq (int .year) $year }}{{ $dataItems = .items }}{{ end }}{{ end }}
-            {{ $cmsItems := (where $cmsPublications "Params.year" $year).ByDate.Reverse }}
+            {{ $cmsItems := (where (where $cmsPublications "Params.year" $year) "Params.date" "ne" nil).ByDate }}
+            {{ $cmsItemsNoDate := where (where $cmsPublications "Params.year" $year) "Params.date" "eq" nil }}
             {{ $unmanagedDataItems := slice }}
             {{ range $dataItems }}
               {{ $dataPaper := . }}{{ $managed := false }}
               {{ range $cmsItems }}{{ if eq (anchorize .Title) (anchorize $dataPaper.title) }}{{ $managed = true }}{{ end }}{{ end }}
+              {{ range $cmsItemsNoDate }}{{ if eq (anchorize .Title) (anchorize $dataPaper.title) }}{{ $managed = true }}{{ end }}{{ end }}
               {{ if not $managed }}{{ $unmanagedDataItems = $unmanagedDataItems | append $dataPaper }}{{ end }}
             {{ end }}
-            {{ $paperCount := add (len $unmanagedDataItems) (len $cmsItems) }}
+            {{ $paperCount := add (len $unmanagedDataItems) (len $cmsItems) (len $cmsItemsNoDate) }}
             <details class="publication-year"{{ if eq $index 0 }} open{{ end }}>
               <summary><strong>{{ $year }}</strong><span>{{ $paperCount }} {{ if $zh }}篇{{ else }}{{ if eq $paperCount 1 }}paper{{ else }}papers{{ end }}{{ end }}</span></summary>
               <ol>
@@ -279,6 +281,18 @@
                   </li>
                 {{ end }}
                 {{ range $cmsItems }}
+                  <li>
+                    {{ $accepted := eq .Params.publication_status "accepted" }}
+                    {{ $publicationURL := .RelPermalink }}
+                    {{ $external := false }}
+                    {{ with .Params.doi }}{{ if not $accepted }}{{ $publicationURL = cond (hasPrefix . "http") . (printf "https://doi.org/%s" .) }}{{ $external = true }}{{ end }}{{ end }}
+                    <h3><a href="{{ $publicationURL }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .Title }}</a></h3>
+                    <p>{{ .Params.authors }}</p>
+                    <span>{{ .Params.venue }}{{ with .Params.doi }}{{ $doiURL := cond (hasPrefix . "http") . (printf "https://doi.org/%s" .) }} · <a href="{{ $doiURL }}" target="_blank" rel="noopener">DOI</a>{{ end }}</span>
+                    {{ if $accepted }}<span class="publication-status">{{ if $zh }}已接收{{ else }}Accepted{{ end }}</span>{{ end }}
+                  </li>
+                {{ end }}
+                {{ range $cmsItemsNoDate }}
                   <li>
                     {{ $accepted := eq .Params.publication_status "accepted" }}
                     {{ $publicationURL := .RelPermalink }}
