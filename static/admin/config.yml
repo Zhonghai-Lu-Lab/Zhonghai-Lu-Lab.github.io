@@ -23,8 +23,6 @@ collections:
     folder: content/cms/news
     create: true
     i18n: true
-    filter: {field: cms_managed, value: true}
-    path: '{{slug}}/index'
     fields:
       - {label: CMS managed, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
       - {label: Title / 标题, name: title, widget: string, i18n: true}
@@ -41,8 +39,6 @@ collections:
     folder: content/cms/events
     create: true
     i18n: true
-    filter: {field: cms_managed, value: true}
-    path: '{{slug}}/index'
     fields:
       - {label: CMS managed / CMS 管理标记, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
       - {label: Title / 标题, name: title, widget: string, i18n: true}
@@ -104,8 +100,6 @@ collections:
     folder: content/cms/projects
     create: true
     i18n: true
-    filter: {field: cms_managed, value: true}
-    path: '{{slug}}/index'
     fields:
       - {label: CMS managed, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
       - {label: Project name / 项目名称, name: title, widget: string, i18n: true}
@@ -126,8 +120,6 @@ collections:
     folder: content/cms/awards
     create: true
     i18n: true
-    filter: {field: cms_managed, value: true}
-    path: '{{slug}}/index'
     fields:
       - {label: CMS managed / CMS 管理标记, name: cms_managed, widget: hidden, default: true, i18n: duplicate}
       - {label: Title / 标题, name: title, widget: string, i18n: true}
